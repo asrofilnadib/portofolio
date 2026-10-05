@@ -149,6 +149,60 @@
     ],
     "company": "pas"
   },
+  "dashboard-yield": {
+    "title": "Dashboard Yield",
+    "owner": "asrofilnadib",
+    "repo": "portal-pas",
+    "branch": "dev",
+    "author": "asrofilnadib",
+    "prefixes": [
+      "dashboard-yield",
+      "seas2-dashboard",
+      "seas2-line-monitoring"
+    ],
+    "company": "pas"
+  },
+  "dashboard-catalog": {
+    "title": "Dashboard Catalog",
+    "owner": "asrofilnadib",
+    "repo": "portal-pas",
+    "branch": "dev",
+    "author": "asrofilnadib",
+    "prefixes": [
+      "dashboard-catalog"
+    ],
+    "company": "pas"
+  },
+  "help-dev-kanban": {
+    "title": "Help Dev Kanban",
+    "owner": "asrofilnadib",
+    "repo": "portal-pas",
+    "branch": "dev",
+    "author": "asrofilnadib",
+    "prefixes": [
+      "kanban",
+      "help-dev-kanban"
+    ],
+    "company": "pas"
+  },
+  "form-seasoning-2": {
+    "title": "Form Seasoning 2",
+    "owner": "asrofilnadib",
+    "repo": "portal-pas",
+    "branch": "dev",
+    "author": "asrofilnadib",
+    "prefixes": [
+      "mixer-tepung",
+      "dicer-bawang",
+      "seas2-garnish",
+      "higienitas-pekerja",
+      "pengayak-tepung",
+      "pengayakan-garnish",
+      "magnetic-trap",
+      "seas2-proses-garnish"
+    ],
+    "company": "pas"
+  },
   "metal-detector": {
     "title": "Metal Detector Proses",
     "owner": "asrofilnadib",

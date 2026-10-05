@@ -1,0 +1,110 @@
+---
+description: Format pesan commit Git — conventional commits, bahasa default Indonesia
+alwaysApply: true
+---
+
+# Pesan commit
+
+Setiap commit mengikuti [Conventional Commits](https://www.conventionalcommits.org/). Judulnya harus rapi dan konsisten di semua repo.
+
+## Bahasa
+
+Default: **Indonesia**.
+
+Pakai Inggris hanya jika user meminta bahasa Inggris untuk commit itu, atau jika user bilang repo ini commit-nya Inggris. Kalau tidak ada permintaan, tetap Indonesia.
+
+## Bentuk
+
+```
+type(scope): deskripsi singkat
+
+Body opsional, satu atau dua kalimat.
+
+Footer opsional.
+```
+
+Baris judul wajib. Body dan footer hanya kalau perlu. Antara judul dan body ada satu baris kosong.
+
+### type
+
+Wajib salah satu dari daftar ini:
+
+| type | Kapan |
+| --- | --- |
+| feat | Fitur baru untuk user |
+| fix | Perbaikan bug |
+| docs | Hanya dokumentasi |
+| style | Format, spasi, titik koma, tanpa ubah perilaku |
+| refactor | Ubah struktur kode, perilaku tetap |
+| perf | Performa |
+| test | Tambah atau perbaiki tes |
+| build | Build, dependensi, paket |
+| ci | Pipeline CI |
+| chore | Lain-lain yang bukan fitur dan bukan fix |
+| revert | Mengembalikan commit sebelumnya |
+
+Jangan mengarang type di luar daftar.
+
+### scope
+
+Opsional, tapi isi kalau modulnya jelas. Singkat, huruf kecil, tanpa spasi: `feat(kanban): ...`
+
+Kalau perubahan menyentuh banyak modul dan tidak ada satu scope yang jujur, lewati scope: `fix: ...`
+
+### deskripsi
+
+- Satu kalimat, tanpa titik di akhir.
+- Fokus ke apa yang berubah untuk user atau sistem, bukan daftar file.
+- Indonesia: kalimat natural. Contoh: `cegah simpan SH bahan baku dobel`
+- Inggris, kalau diminta: imperative lowercase, seperti `prevent duplicate raw-material save`
+- Istilah teknis yang sudah umum (endpoint, WebSocket, migration) boleh tetap Inggris di tengah kalimat Indonesia.
+
+### body
+
+Hanya jika judulnya belum cukup.
+
+- Satu atau dua kalimat.
+- Jangan bullet.
+- Jangan narasi diff per baris ("Removed X from Y", "Updated Z to utilize...").
+- Jangan penutup kosong seperti "These changes improve..." atau "enhancing user experience".
+
+### footer
+
+Pakai kalau ada breaking change:
+
+```
+BREAKING CHANGE: apa yang harus disesuaikan pemakai.
+```
+
+Jangan tambah `Co-authored-by` kecuali user meminta.
+
+## Satu commit
+
+Satu commit = satu tujuan. Jangan mencampur fitur dan perbaikan yang tidak berhubungan.
+
+## Contoh
+
+Indonesia (default):
+
+```
+feat(cctv): pindahkan all akses, playback, dan download ke management user
+
+Akses kamera penuh, playback, dan download sekarang diatur per user.
+```
+
+```
+fix(sigra): cegah simpan SH bahan baku dobel dan tampilkan alert
+```
+
+Inggris, hanya kalau diminta:
+
+```
+fix(sigra): prevent duplicate raw-material certificate save
+```
+
+## Yang dihindari
+
+- `update matrix item request handling and UI`
+- Judul tanpa type
+- Lima bullet bahasa Inggris lalu paragraf "These changes improve..."
+- Subject tanpa scope padahal modulnya jelas

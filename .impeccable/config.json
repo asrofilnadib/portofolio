@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "skipped-heading",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-05T10:03:58.559Z",
+        "reason": "User confirmed: new PAS cards and modals copy the existing Metal Detector markup, which already uses h3 card titles and h2 then h4 inside the modal."
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-05T10:03:58.568Z",
+        "reason": "User confirmed: portfolio type scale stays the shipped template; new projects must match Metal Detector, not introduce a new size ramp."
+      },
+      {
+        "rule": "marketing-buzzword",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-05T10:04:50.545Z",
+        "reason": "Agent: matches are existing portfolio sentences (streamline, cutting-edge, seamless) outside this task. New PAS project copy does not use those phrases."
+      }
+    ]
+  }
+}
