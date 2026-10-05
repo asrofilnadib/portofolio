@@ -1,5 +1,4 @@
-const config = require("./commits-config.json");
-const { matchesProject, isMerge, normalizeAuthors } = require("./commit-utils");
+const { loadCommitsConfig, matchesProject, isMerge, normalizeAuthors } = require("./commit-utils");
 
 function cors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -88,6 +87,7 @@ module.exports = async function handler(req, res) {
 
   const project = String(req.query.project || "").trim();
   const limit = Math.min(parseInt(req.query.limit || "200", 10) || 200, 250);
+  const config = loadCommitsConfig();
   const projectConfig = config[project];
 
   if (!projectConfig) {

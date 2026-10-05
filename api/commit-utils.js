@@ -2,6 +2,15 @@
  * Shared helpers for /api/commits and /api/activity.
  */
 
+const fs = require("fs");
+const path = require("path");
+
+const COMMITS_CONFIG_PATH = path.join(__dirname, "commits-config.json");
+
+function loadCommitsConfig() {
+  return JSON.parse(fs.readFileSync(COMMITS_CONFIG_PATH, "utf8"));
+}
+
 function normalizeToken(value) {
   return String(value || "")
     .toLowerCase()
@@ -74,6 +83,7 @@ function normalizeAuthors(projectConfig) {
 }
 
 module.exports = {
+  loadCommitsConfig,
   normalizeToken,
   matchesPrefixes,
   extractScopes,

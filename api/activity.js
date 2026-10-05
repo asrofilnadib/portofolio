@@ -1,5 +1,4 @@
-const config = require("./commits-config.json");
-const { matchesProject, isMerge, normalizeAuthors } = require("./commit-utils");
+const { loadCommitsConfig, matchesProject, isMerge, normalizeAuthors } = require("./commit-utils");
 
 function cors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -131,6 +130,7 @@ module.exports = async function handler(req, res) {
   }
 
   const companyFilter = String(req.query.company || "all").trim().toLowerCase();
+  const config = loadCommitsConfig();
   const entries = Object.entries(config).filter(([, cfg]) => {
     if (!companyFilter || companyFilter === "all") return true;
     return String(cfg.company || "others").toLowerCase() === companyFilter;
