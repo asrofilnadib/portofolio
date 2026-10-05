@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 980" width="100%" role="img" aria-label="Form Seasoning 2 flowchart">
+  <defs>
+    <marker id="arrow-seas2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c9c9c9"/>
+    </marker>
+  </defs>
+  <style>
+    .box { fill: #1f2020; stroke: #ccc; stroke-width: 1.5; }
+    .label { fill: #e8e8e8; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 15px; text-anchor: middle; }
+    .sub { font-size: 13px; }
+    .edge { stroke: #c9c9c9; stroke-width: 1.5; fill: none; marker-end: url(#arrow-seas2); }
+    .edge-label { fill: #b0b0b0; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+  </style>
+
+  <rect class="box" x="170" y="24" width="300" height="48" rx="8"/>
+  <text class="label" x="320" y="53">Pilih form di menu Seas 2</text>
+  <path class="edge" d="M320 72 V100"/>
+
+  <rect class="box" x="130" y="100" width="380" height="64" rx="8"/>
+  <text class="label" x="320" y="128">Auto tanggal produksi + shift</text>
+  <text class="label sub" x="320" y="148">00:00-06:59 masih tanggal kemarin</text>
+  <path class="edge" d="M320 164 V192"/>
+
+  <rect class="box" x="80" y="192" width="480" height="88" rx="8"/>
+  <text class="label" x="320" y="220">Isi sheet resmi</text>
+  <text class="label sub" x="320" y="242">Mixer / Dicer / Garnish / Higienitas</text>
+  <text class="label sub" x="320" y="260">Magnetic trap / Pengayak / Parameter</text>
+  <path class="edge" d="M320 280 V308"/>
+
+  <rect class="box" x="160" y="308" width="320" height="48" rx="8"/>
+  <text class="label" x="320" y="337">Simpan laporan</text>
+  <path class="edge" d="M320 356 V384"/>
+
+  <rect class="box" x="150" y="384" width="340" height="48" rx="8"/>
+  <text class="label" x="320" y="413">Daftar laporan per tanggal</text>
+  <path class="edge" d="M320 432 V460"/>
+
+  <rect class="box" x="110" y="460" width="420" height="64" rx="8"/>
+  <text class="label" x="320" y="488">Export PDF</text>
+  <text class="label sub" x="320" y="508">header sama dengan nomor dokumen form</text>
+  <path class="edge" d="M180 492 H70 V600"/>
+  <path class="edge" d="M460 492 H570 V600"/>
+
+  <rect class="box" x="16" y="600" width="200" height="88" rx="8"/>
+  <text class="label" x="116" y="628" style="font-size:13px">Garnish</text>
+  <text class="label sub" x="116" y="648">master varian + user</text>
+  <text class="label sub" x="116" y="666">chart report</text>
+
+  <rect class="box" x="424" y="600" width="200" height="88" rx="8"/>
+  <text class="label" x="524" y="628" style="font-size:13px">Mixer trial</text>
+  <text class="label sub" x="524" y="648">form 1 shift</text>
+  <text class="label sub" x="524" y="666">baris dummy + PDF</text>
+
+  <text class="edge-label" x="116" y="590">cabang</text>
+  <text class="edge-label" x="524" y="590">cabang</text>
+</svg>
