@@ -7,7 +7,7 @@ Folder ini buat nyiapin case study portofolio (Competence / Works / Resume).
 | Tier | Systems | Deliverable |
 |------|---------|-------------|
 | **S** | TMS, Chatbot, Smart Lab, SCADA→Tablet, Psikotes, Command Center | Brief penuh + diagram + PPT + video demo |
-| **A** | E-Cafe Invoice, GA Stock Opname, KAPAS, Logbook, TimbanginIN, P2H, KMS Form | Brief ringan + diagram + PPT seadaanya |
+| **A** | E-Cafe Invoice, GA Stock Opname, KAPAS, Logbook, TimbanginIN, P2H, KMS Form, Dashboard Yield, Dashboard Catalog, Help Dev Kanban, Form Seasoning 2 | Brief ringan + diagram + PPT seadaanya |
 | **B** | Prayer | Screenshot doang |
 
 Fokus utama: **S-tier**. A-tier seadaanya. B-tier cuma SS.
@@ -46,6 +46,10 @@ notes.md → diagram/ → ppt/ → video/ → case study page
 | `prayer` | Prayer (masjid display) | B | MyPAS |
 | `car-pool` | Car Pool (peminjaman mobil dinas) | A | MyPAS |
 | `metal-detector` | Metal Detector Proses (QC Seasoning 2) | A | MyPAS |
+| `dashboard-yield` | Dashboard Yield (Seasoning 2) | A | MyPAS |
+| `dashboard-catalog` | Dashboard Catalog (Metabase) | A | MyPAS |
+| `help-dev-kanban` | Help Dev Kanban | A | MyPAS |
+| `form-seasoning-2` | Form Seasoning 2 | A | MyPAS |
 
 ## Flowcharts (Mermaid)
 

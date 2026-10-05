@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 1040" width="100%" role="img" aria-label="Help Dev Kanban flowchart">
+  <defs>
+    <marker id="arrow-kanban" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c9c9c9"/>
+    </marker>
+  </defs>
+  <style>
+    .box { fill: #1f2020; stroke: #ccc; stroke-width: 1.5; }
+    .label { fill: #e8e8e8; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 15px; text-anchor: middle; }
+    .sub { font-size: 13px; }
+    .edge { stroke: #c9c9c9; stroke-width: 1.5; fill: none; marker-end: url(#arrow-kanban); }
+  </style>
+
+  <rect class="box" x="110" y="24" width="340" height="56" rx="8"/>
+  <text class="label" x="280" y="48">Buka /help-dev/kanban</text>
+  <text class="label sub" x="280" y="66">paksa HTTP untuk ws://</text>
+  <path class="edge" d="M280 80 V108"/>
+
+  <rect class="box" x="100" y="108" width="360" height="56" rx="8"/>
+  <text class="label" x="280" y="132">Cek peran Help Dev</text>
+  <text class="label sub" x="280" y="150">PM atau anggota tim</text>
+  <path class="edge" d="M280 164 V192"/>
+
+  <rect class="box" x="70" y="192" width="420" height="64" rx="8"/>
+  <text class="label" x="280" y="220">Pilih divisi + tanggal</text>
+  <text class="label sub" x="280" y="240">Development atau Operasional</text>
+  <path class="edge" d="M280 256 V284"/>
+
+  <rect class="box" x="70" y="284" width="420" height="64" rx="8"/>
+  <text class="label" x="280" y="312">Board project</text>
+  <text class="label sub" x="280" y="332">TBD / Running / Done</text>
+  <path class="edge" d="M280 348 V376"/>
+
+  <rect class="box" x="90" y="376" width="380" height="64" rx="8"/>
+  <text class="label" x="280" y="404">PM buat project dan task</text>
+  <text class="label sub" x="280" y="424">dept, PIC, lampiran FilePond</text>
+  <path class="edge" d="M280 440 V468"/>
+
+  <rect class="box" x="90" y="468" width="380" height="56" rx="8"/>
+  <text class="label" x="280" y="492">Drag-drop assign ke PIC</text>
+  <text class="label sub" x="280" y="510">bisa lebih dari satu</text>
+  <path class="edge" d="M280 524 V552"/>
+
+  <rect class="box" x="80" y="552" width="400" height="64" rx="8"/>
+  <text class="label" x="280" y="580">Chat grup + presence</text>
+  <text class="label sub" x="280" y="600">WebSocket, edit / recall / reply</text>
+  <path class="edge" d="M280 616 V644"/>
+
+  <rect class="box" x="90" y="644" width="380" height="56" rx="8"/>
+  <text class="label" x="280" y="668">Notifikasi WhatsApp</text>
+  <text class="label sub" x="280" y="686">saat task di-assign</text>
+  <path class="edge" d="M280 700 V728"/>
+
+  <rect class="box" x="100" y="728" width="360" height="56" rx="8"/>
+  <text class="label" x="280" y="752">Mode TV tanpa login</text>
+  <text class="label sub" x="280" y="770">board yang sama di dinding</text>
+</svg>
