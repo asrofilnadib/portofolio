@@ -1,5 +1,5 @@
 const config = require("./commits-config.json");
-const { matchesPrefixes, isMerge, normalizeAuthors } = require("./commit-utils");
+const { matchesProject, isMerge, normalizeAuthors } = require("./commit-utils");
 
 function cors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -104,11 +104,11 @@ module.exports = async function handler(req, res) {
     });
   }
 
-  const { owner, repo, branch = "dev", prefixes = [], title } = projectConfig;
+  const { owner, repo, branch = "dev", prefixes = [], scopes = [], title } = projectConfig;
   const authors = normalizeAuthors(projectConfig);
   // Monorepo modules sit deep in history — dig farther when filtering by prefix.
   const perPage = 100;
-  const maxPages = prefixes.length ? 18 : Math.max(3, authors.length > 1 ? 5 : 2);
+  const maxPages = prefixes.length || scopes.length ? 18 : Math.max(3, authors.length > 1 ? 5 : 2);
 
   const branchCandidates = [branch, "dev", "main", "master"].filter(
     (b, i, arr) => b && arr.indexOf(b) === i
@@ -151,8 +151,8 @@ module.exports = async function handler(req, res) {
 
         // Only stop early once we have enough matches AND we've scanned deep enough
         // to cover older module history (e.g. Smart Lab Dec 2025 sits ~page 8+).
-        const preview = filterCommits([...bySha.values()], { prefixes, limit, authors });
-        const deepEnough = page >= (prefixes.length ? 12 : 2);
+        const preview = filterCommits([...bySha.values()], { prefixes, scopes, limit, authors });
+        const deepEnough = page >= (prefixes.length || scopes.length ? 12 : 2);
         if (preview.length >= limit && deepEnough) break;
       }
       if (pageFailed) break;
@@ -196,6 +196,7 @@ module.exports = async function handler(req, res) {
     repo,
     title,
     prefixes,
+    scopes,
     limit,
     branch: usedBranch,
     authors,
@@ -207,7 +208,7 @@ function filterCommits(rawCommits, meta) {
   for (const item of rawCommits || []) {
     const message = item.commit?.message || "";
     if (isMerge(message)) continue;
-    if (!matchesPrefixes(message, meta.prefixes)) continue;
+    if (!matchesProject(message, meta.prefixes, meta.scopes)) continue;
 
     const parsed = parseCommitMessage(message);
     const date = item.commit?.author?.date || item.commit?.committer?.date;

@@ -1,5 +1,5 @@
 const config = require("./commits-config.json");
-const { matchesPrefixes, isMerge, normalizeAuthors } = require("./commit-utils");
+const { matchesProject, isMerge, normalizeAuthors } = require("./commit-utils");
 
 function cors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -106,12 +106,12 @@ async function fetchRepoCommits({ owner, repo, branch, authors, token, maxPages 
   };
 }
 
-function buildDayCounts(rawCommits, prefixes) {
+function buildDayCounts(rawCommits, prefixes, scopes) {
   const dayCounts = {};
   for (const item of rawCommits || []) {
     const message = item.commit?.message || "";
     if (isMerge(message)) continue;
-    if (!matchesPrefixes(message, prefixes)) continue;
+    if (!matchesProject(message, prefixes, scopes)) continue;
     const iso = item.commit?.author?.date || item.commit?.committer?.date;
     if (!iso) continue;
     const day = toDayKey(iso);
@@ -192,7 +192,7 @@ module.exports = async function handler(req, res) {
     }
 
     for (const { key, cfg } of group.projects) {
-      const dayCounts = buildDayCounts(fetched.commits, cfg.prefixes || []);
+      const dayCounts = buildDayCounts(fetched.commits, cfg.prefixes || [], cfg.scopes || []);
       projects.push({
         key,
         title: cfg.title || key,
