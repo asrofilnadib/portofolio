@@ -1,219 +1,219 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1760" width="100%" role="img" aria-label="TMS data flow diagram">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1500" width="100%" role="img" aria-label="DFD Level 1 TMS Gane-Sarson">
   <defs>
-    <marker id="tms-d-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#c9c9c9"/>
+    <marker id="tms-gs-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e6e6e6"/>
     </marker>
   </defs>
   <style>
-    .band { fill: #17171b; stroke: #333; stroke-width: 1; }
-    .ent { fill: #1f2020; stroke: #8750f7; stroke-width: 1.6; }
-    .proc { fill: #1f2020; stroke: #ccc; stroke-width: 1.5; }
-    .store { fill: #16161a; stroke: #aaa; stroke-width: 1.5; }
-    .label { fill: #e8e8e8; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 13px; text-anchor: middle; }
-    .sub { font-size: 11px; fill: #c9c9c9; }
-    .flow { stroke: #c9c9c9; stroke-width: 1.6; fill: none; marker-end: url(#tms-d-arrow); }
-    .seq { stroke: #8750f7; stroke-width: 1.6; fill: none; marker-end: url(#tms-d-arrow); }
-    .flab { fill: #b8b8b8; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 11px; text-anchor: middle; }
-    .title { fill: #f0e6ff; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 16px; font-weight: 700; text-anchor: middle; }
-    .col { fill: #8a8a8a; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 11px; text-anchor: middle; letter-spacing: 0.4px; }
+    .ent { fill: #2c3340; stroke: #e6e6e6; stroke-width: 1.6; }
+    .proc { fill: #3a4556; stroke: #e6e6e6; stroke-width: 1.8; }
+    .store-line { stroke: #e6e6e6; stroke-width: 1.4; fill: none; }
+    .elab { fill: #f0f0f0; font-family: Georgia, "Times New Roman", serif; font-size: 13px; text-anchor: middle; }
+    .pnum { fill: #f0f0f0; font-family: Georgia, "Times New Roman", serif; font-size: 13px; text-anchor: middle; }
+    .plab { fill: #f0f0f0; font-family: Georgia, "Times New Roman", serif; font-size: 11px; text-anchor: middle; }
+    .slab { fill: #f0f0f0; font-family: Georgia, "Times New Roman", serif; font-size: 12px; text-anchor: middle; }
+    .flab { fill: #cfcfcf; font-family: Georgia, "Times New Roman", serif; font-size: 11px; }
+    .title { fill: #f0f0f0; font-family: Georgia, "Times New Roman", serif; font-size: 15px; text-anchor: middle; }
+    .flow { stroke: #e6e6e6; stroke-width: 1.2; fill: none; marker-end: url(#tms-gs-arrow); }
+    .wire { stroke: #e6e6e6; stroke-width: 1.2; fill: none; }
   </style>
 
-  <text class="title" x="640" y="28">DFD TMS — satu baris = satu proses</text>
-  <text class="col" x="116" y="52">AKTOR</text>
-  <text class="col" x="500" y="52">PROSES</text>
-  <text class="col" x="1020" y="52">DATA STORE</text>
+  <text class="title" x="480" y="24">DFD Level 1 — TMS Transportation</text>
 
-  <rect class="band" x="16" y="64" width="1248" height="176" rx="8"/>
-  <rect class="band" x="16" y="252" width="1248" height="176" rx="8"/>
-  <rect class="band" x="16" y="440" width="1248" height="176" rx="8"/>
-  <rect class="band" x="16" y="628" width="1248" height="176" rx="8"/>
-  <rect class="band" x="16" y="816" width="1248" height="176" rx="8"/>
-  <rect class="band" x="16" y="1004" width="1248" height="196" rx="8"/>
-  <rect class="band" x="16" y="1212" width="1248" height="176" rx="8"/>
-  <rect class="band" x="16" y="1400" width="1248" height="196" rx="8"/>
+  <!-- entities -->
+  <rect class="ent" x="20" y="40" width="130" height="36"/>
+  <text class="elab" x="85" y="63">SAP</text>
 
-  <!-- ===== 1 Upload Reservasi ===== -->
-  <rect class="ent" x="32" y="86" width="168" height="48" rx="4"/>
-  <text class="label" x="116" y="115">SAP</text>
-  <path class="flow" d="M200 110 H370"/>
-  <text class="flab" x="285" y="100">Excel RSV</text>
+  <rect class="ent" x="20" y="88" width="130" height="36"/>
+  <text class="elab" x="85" y="111">Produksi</text>
 
-  <rect class="ent" x="32" y="150" width="168" height="48" rx="4"/>
-  <text class="label" x="116" y="179">Produksi</text>
-  <path class="flow" d="M200 174 H370"/>
-  <text class="flab" x="285" y="164">upload file</text>
+  <rect class="ent" x="780" y="230" width="150" height="40"/>
+  <text class="elab" x="855" y="255">Admin WSM</text>
 
-  <ellipse class="proc" cx="500" cy="142" rx="128" ry="42"/>
-  <text class="label" x="500" y="136">1 Upload Reservasi</text>
-  <text class="sub" x="500" y="154">Excel SAP / RSV</text>
+  <rect class="ent" x="20" y="412" width="130" height="36"/>
+  <text class="elab" x="85" y="435">Staging</text>
 
-  <path class="flow" d="M628 142 H800"/>
-  <rect class="store" x="800" y="118" width="440" height="48"/>
-  <line x1="812" y1="118" x2="812" y2="166" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="148">tms_material_reservasi</text>
+  <rect class="ent" x="20" y="582" width="130" height="36"/>
+  <text class="elab" x="85" y="605">Pengawas</text>
 
-  <path class="seq" d="M500 184 V252"/>
-  <text class="flab" x="548" y="226">lanjut picking</text>
+  <rect class="ent" x="780" y="752" width="150" height="40"/>
+  <text class="elab" x="855" y="777">Driver</text>
 
-  <!-- ===== 2 Picking WSM ===== -->
-  <rect class="ent" x="32" y="306" width="168" height="52" rx="4"/>
-  <text class="label" x="116" y="337">Admin WSM</text>
-  <path class="flow" d="M200 332 H370"/>
-  <text class="flab" x="285" y="322">picking list</text>
+  <rect class="ent" x="780" y="1092" width="150" height="48"/>
+  <text class="elab" x="855" y="1114">Operator</text>
+  <text class="plab" x="855" y="1130">maps / monitoring</text>
 
-  <ellipse class="proc" cx="500" cy="332" rx="128" ry="40"/>
-  <text class="label" x="500" y="326">2 Picking WSM</text>
-  <text class="sub" x="500" y="344">MID + palet</text>
+  <!-- processes -->
+  <circle class="proc" cx="300" cy="100" r="54"/>
+  <text class="pnum" x="300" y="88">1.0</text>
+  <text class="plab" x="300" y="106">Upload</text>
+  <text class="plab" x="300" y="120">Reservasi</text>
 
-  <path class="flow" d="M628 332 H800"/>
-  <rect class="store" x="800" y="274" width="440" height="52"/>
-  <line x1="812" y1="274" x2="812" y2="326" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="296">tms_material_reservasi_wsm</text>
-  <text class="sub" x="1020" y="312">picking / MID</text>
-  <rect class="store" x="800" y="338" width="440" height="48"/>
-  <line x1="812" y1="338" x2="812" y2="386" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="368">tms_master_konversi_palet</text>
+  <circle class="proc" cx="300" cy="270" r="54"/>
+  <text class="pnum" x="300" y="258">2.0</text>
+  <text class="plab" x="300" y="276">Picking WSM</text>
+  <text class="plab" x="300" y="290">MID + palet</text>
 
-  <path class="seq" d="M500 372 V440"/>
-  <text class="flab" x="548" y="414">gate staging</text>
+  <circle class="proc" cx="300" cy="440" r="54"/>
+  <text class="pnum" x="300" y="428">3.0</text>
+  <text class="plab" x="300" y="446">Staging</text>
+  <text class="plab" x="300" y="460">Confirm</text>
 
-  <!-- ===== 3 Staging Confirm ===== -->
-  <rect class="ent" x="32" y="494" width="168" height="52" rx="4"/>
-  <text class="label" x="116" y="525">Staging</text>
-  <path class="flow" d="M200 520 H370"/>
-  <text class="flab" x="285" y="510">checklist</text>
+  <circle class="proc" cx="300" cy="610" r="54"/>
+  <text class="pnum" x="300" y="598">4.0</text>
+  <text class="plab" x="300" y="616">Draft / Request</text>
+  <text class="plab" x="300" y="630">SJ max 12 palet</text>
 
-  <ellipse class="proc" cx="500" cy="520" rx="128" ry="40"/>
-  <text class="label" x="500" y="514">3 Staging Confirm</text>
-  <text class="sub" x="500" y="532">material = aktif</text>
+  <circle class="proc" cx="300" cy="780" r="54"/>
+  <text class="pnum" x="300" y="768">5.0</text>
+  <text class="plab" x="300" y="786">Race Accept</text>
+  <text class="plab" x="300" y="800">SJ jadi DO</text>
 
-  <path class="flow" d="M628 520 H800"/>
-  <rect class="store" x="800" y="494" width="440" height="52"/>
-  <line x1="812" y1="494" x2="812" y2="546" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="516">merge tables</text>
-  <text class="sub" x="1020" y="532">RSV + WSM aktif</text>
+  <circle class="proc" cx="300" cy="950" r="54"/>
+  <text class="pnum" x="300" y="938">6.0</text>
+  <text class="plab" x="300" y="956">QR Muat /</text>
+  <text class="plab" x="300" y="970">Bongkar</text>
 
-  <path class="seq" d="M500 560 V628"/>
-  <text class="flab" x="555" y="602">siap request</text>
+  <circle class="proc" cx="300" cy="1120" r="54"/>
+  <text class="pnum" x="300" y="1108">7.0</text>
+  <text class="plab" x="300" y="1126">Maps / Notif</text>
+  <text class="plab" x="300" y="1140">Leaflet WS</text>
 
-  <!-- ===== 4 Draft / Request ===== -->
-  <rect class="ent" x="32" y="682" width="168" height="52" rx="4"/>
-  <text class="label" x="116" y="713">Pengawas</text>
-  <path class="flow" d="M200 708 H370"/>
-  <text class="flab" x="285" y="698">draft SJ max 12 palet</text>
+  <circle class="proc" cx="300" cy="1290" r="54"/>
+  <text class="pnum" x="300" y="1278">8.0</text>
+  <text class="plab" x="300" y="1296">Confirm /</text>
+  <text class="plab" x="300" y="1310">Komplain</text>
 
-  <ellipse class="proc" cx="500" cy="708" rx="128" ry="40"/>
-  <text class="label" x="500" y="702">4 Draft / Request</text>
-  <text class="sub" x="500" y="720">SJ to / to_2 / to_3</text>
+  <!-- stores -->
+  <line class="store-line" x1="520" y1="80" x2="750" y2="80"/>
+  <line class="store-line" x1="520" y1="108" x2="750" y2="108"/>
+  <text class="slab" x="635" y="100">tms_material_reservasi</text>
 
-  <path class="flow" d="M628 708 H800"/>
-  <rect class="store" x="800" y="682" width="440" height="52"/>
-  <line x1="812" y1="682" x2="812" y2="734" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="704">tms_transaction</text>
-  <text class="sub" x="1020" y="720">status = request</text>
+  <line class="store-line" x1="520" y1="248" x2="750" y2="248"/>
+  <line class="store-line" x1="520" y1="276" x2="750" y2="276"/>
+  <text class="slab" x="635" y="268">tms_material_reservasi_wsm</text>
 
-  <path class="seq" d="M500 748 V816"/>
-  <text class="flab" x="555" y="790">broadcast driver</text>
+  <line class="store-line" x1="520" y1="298" x2="750" y2="298"/>
+  <line class="store-line" x1="520" y1="326" x2="750" y2="326"/>
+  <text class="slab" x="635" y="318">tms_master_konversi_palet</text>
 
-  <!-- ===== 5 Race Accept ===== -->
-  <rect class="ent" x="32" y="870" width="168" height="52" rx="4"/>
-  <text class="label" x="116" y="901">Driver</text>
-  <path class="flow" d="M200 896 H370"/>
-  <text class="flab" x="285" y="886">accept / reject</text>
+  <line class="store-line" x1="520" y1="418" x2="750" y2="418"/>
+  <line class="store-line" x1="520" y1="446" x2="750" y2="446"/>
+  <text class="slab" x="635" y="438">merge tables</text>
 
-  <ellipse class="proc" cx="500" cy="896" rx="128" ry="40"/>
-  <text class="label" x="500" y="890">5 Race Accept</text>
-  <text class="sub" x="500" y="908">SJ jadi DO</text>
+  <line class="store-line" x1="520" y1="760" x2="750" y2="760"/>
+  <line class="store-line" x1="520" y1="788" x2="750" y2="788"/>
+  <text class="slab" x="635" y="780">tms_transaction</text>
 
-  <path class="flow" d="M628 896 H800"/>
-  <rect class="store" x="800" y="838" width="440" height="52"/>
-  <line x1="812" y1="838" x2="812" y2="890" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="860">tms_driver / tms_car</text>
-  <text class="sub" x="1020" y="876">harus QR gedung aktif</text>
-  <rect class="store" x="800" y="902" width="440" height="48"/>
-  <line x1="812" y1="902" x2="812" y2="950" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="932">tms_transaction</text>
-  <text class="sub" x="1020" y="968">lock DO; reject tetap request</text>
+  <line class="store-line" x1="520" y1="820" x2="750" y2="820"/>
+  <line class="store-line" x1="520" y1="848" x2="750" y2="848"/>
+  <text class="slab" x="635" y="840">tms_driver / tms_car</text>
 
-  <path class="seq" d="M500 936 V1004"/>
-  <text class="flab" x="548" y="978">OTW ambil</text>
+  <!-- SAP + Produksi to 1.0 -->
+  <path class="flow" d="M150 58 H200 V90 H246"/>
+  <text class="flab" x="154" y="50">Excel RSV</text>
+  <path class="flow" d="M150 106 H220 V110 H246"/>
+  <text class="flab" x="154" y="128">upload file</text>
 
-  <!-- ===== 6 QR Muat / Bongkar ===== -->
-  <rect class="ent" x="32" y="1028" width="168" height="48" rx="4"/>
-  <text class="label" x="116" y="1057">Pengawas</text>
-  <path class="flow" d="M200 1052 H370"/>
-  <text class="flab" x="285" y="1042">scan gedung / pengawas</text>
+  <!-- 1.0 to reservasi -->
+  <path class="flow" d="M354 100 H520"/>
+  <text class="flab" x="380" y="92">RSV</text>
 
-  <rect class="ent" x="32" y="1092" width="168" height="48" rx="4"/>
-  <text class="label" x="116" y="1121">Driver</text>
-  <path class="flow" d="M200 1116 H370"/>
-  <text class="flab" x="285" y="1106">mulai / selesai</text>
+  <!-- 1.0 to 2.0 -->
+  <path class="flow" d="M300 154 V216"/>
+  <text class="flab" x="308" y="190">no_reservasi</text>
 
-  <ellipse class="proc" cx="500" cy="1084" rx="128" ry="44"/>
-  <text class="label" x="500" y="1078">6 QR Muat / Bongkar</text>
-  <text class="sub" x="500" y="1096">dual-party scan</text>
+  <!-- Admin WSM to 2.0 -->
+  <path class="flow" d="M780 250 H700 V270 H354"/>
+  <text class="flab" x="710" y="242">picking list</text>
 
-  <path class="flow" d="M628 1084 H800"/>
-  <rect class="store" x="800" y="1058" width="440" height="52"/>
-  <line x1="812" y1="1058" x2="812" y2="1110" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="1080">tms_transaction</text>
-  <text class="sub" x="1020" y="1096">muat / bongkar + durasi</text>
+  <!-- 2.0 to stores -->
+  <path class="flow" d="M354 262 H520"/>
+  <text class="flab" x="380" y="254">picking / MID</text>
+  <path class="flow" d="M354 282 H480 V312 H520"/>
+  <text class="flab" x="380" y="300">konversi palet</text>
 
-  <path class="seq" d="M500 1128 V1212"/>
-  <text class="flab" x="548" y="1178">track trip</text>
+  <!-- 2.0 to 3.0 -->
+  <path class="flow" d="M300 324 V386"/>
+  <text class="flab" x="308" y="360">dokumen WSM</text>
 
-  <!-- ===== 7 Maps / Notif ===== -->
-  <rect class="ent" x="32" y="1266" width="168" height="56" rx="4"/>
-  <text class="label" x="116" y="1288">Operator</text>
-  <text class="sub" x="116" y="1306">maps / monitoring</text>
-  <path class="flow" d="M200 1294 H370"/>
-  <text class="flab" x="285" y="1284">posisi truk</text>
+  <!-- Staging to 3.0 -->
+  <path class="flow" d="M150 430 H246"/>
+  <text class="flab" x="154" y="422">checklist</text>
 
-  <ellipse class="proc" cx="500" cy="1294" rx="128" ry="40"/>
-  <text class="label" x="500" y="1288">7 Maps / Notif</text>
-  <text class="sub" x="500" y="1306">Leaflet + WebSocket</text>
+  <!-- 3.0 to merge -->
+  <path class="flow" d="M354 440 H520"/>
+  <text class="flab" x="380" y="432">material aktif</text>
 
-  <path class="flow" d="M628 1294 H800"/>
-  <rect class="store" x="800" y="1268" width="440" height="52"/>
-  <line x1="812" y1="1268" x2="812" y2="1320" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="1290">tms_transaction</text>
-  <text class="sub" x="1020" y="1306">posisi + Telegram</text>
+  <!-- 3.0 to 4.0 -->
+  <path class="flow" d="M300 494 V556"/>
+  <text class="flab" x="308" y="530">siap request</text>
 
-  <path class="seq" d="M500 1334 V1400"/>
-  <text class="flab" x="555" y="1374">kedatangan</text>
+  <!-- Pengawas to 4.0 (and later 6.0 via left bus) -->
+  <path class="flow" d="M150 600 H246"/>
+  <text class="flab" x="154" y="592">draft SJ</text>
 
-  <!-- ===== 8 Confirm / Komplain ===== -->
-  <rect class="ent" x="32" y="1424" width="168" height="48" rx="4"/>
-  <text class="label" x="116" y="1453">Produksi</text>
-  <path class="flow" d="M200 1448 H370"/>
-  <text class="flab" x="285" y="1438">confirm / komplain</text>
+  <!-- 4.0 to transaction bus -->
+  <path class="wire" d="M354 610 H490"/>
+  <text class="flab" x="360" y="600">SJ request</text>
 
-  <rect class="ent" x="32" y="1488" width="168" height="48" rx="4"/>
-  <text class="label" x="116" y="1517">Admin WSM</text>
-  <path class="flow" d="M200 1512 H370"/>
-  <text class="flab" x="285" y="1502">approve + NTI / BAK</text>
+  <!-- 4.0 to 5.0 -->
+  <path class="flow" d="M300 664 V726"/>
+  <text class="flab" x="308" y="700">broadcast</text>
 
-  <ellipse class="proc" cx="500" cy="1480" rx="128" ry="44"/>
-  <text class="label" x="500" y="1474">8 Confirm / Komplain</text>
-  <text class="sub" x="500" y="1492">foto max 2, NTI, BAK</text>
+  <!-- Driver to 5.0 -->
+  <path class="flow" d="M780 772 H700 V780 H354"/>
+  <text class="flab" x="710" y="764">accept / reject</text>
 
-  <path class="flow" d="M628 1480 H800"/>
-  <rect class="store" x="800" y="1454" width="440" height="52"/>
-  <line x1="812" y1="1454" x2="812" y2="1506" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="1476">tms_transaction</text>
-  <text class="sub" x="1020" y="1492">close / material balik staging</text>
+  <!-- 5.0 to driver store + transaction -->
+  <path class="flow" d="M354 790 H480 V834 H520"/>
+  <text class="flab" x="360" y="812">QR gedung aktif</text>
+  <path class="flow" d="M354 770 H520"/>
+  <text class="flab" x="400" y="762">lock DO</text>
 
-  <!-- legend -->
-  <rect class="ent" x="32" y="1628" width="24" height="18" rx="2"/>
-  <text class="sub" x="132" y="1642">external entity</text>
-  <ellipse class="proc" cx="280" cy="1637" rx="18" ry="12"/>
-  <text class="sub" x="360" y="1642">process</text>
-  <rect class="store" x="430" y="1628" width="36" height="18"/>
-  <line x1="436" y1="1628" x2="436" y2="1646" stroke="#aaa" stroke-width="2"/>
-  <text class="sub" x="530" y="1642">data store</text>
-  <path class="seq" d="M640 1637 H700"/>
-  <text class="sub" x="800" y="1642">ungu = urutan proses</text>
-  <text class="sub" x="1060" y="1642">Store diulang biar panah pendek</text>
+  <!-- 5.0 to 6.0 -->
+  <path class="flow" d="M300 834 V896"/>
+  <text class="flab" x="308" y="870">on_proses</text>
 
-  <text class="sub" x="640" y="1688">Race-accept lock SJ ke DO. Reject tidak ganti store: status tetap request sampai driver lain ambil.</text>
+  <!-- Pengawas to 6.0 (gap between entity and process) -->
+  <path class="flow" d="M150 618 H175 V950 H246"/>
+  <text class="flab" x="24" y="790">scan muat / bongkar</text>
+
+  <!-- Driver to 6.0 (inner right) -->
+  <path class="flow" d="M780 792 H760 V950 H354"/>
+  <text class="flab" x="764" y="880">mulai / selesai</text>
+
+  <!-- 6.0 to transaction bus -->
+  <path class="wire" d="M354 950 H490"/>
+  <text class="flab" x="360" y="940">durasi muat/bongkar</text>
+
+  <!-- 6.0 to 7.0 -->
+  <path class="flow" d="M300 1004 V1066"/>
+  <text class="flab" x="308" y="1040">posisi trip</text>
+
+  <!-- Operator to 7.0 -->
+  <path class="flow" d="M780 1116 H700 V1120 H354"/>
+  <text class="flab" x="710" y="1108">track truk</text>
+
+  <!-- 7.0 to transaction bus -->
+  <path class="wire" d="M354 1120 H490"/>
+  <text class="flab" x="400" y="1110">Telegram + maps</text>
+
+  <!-- 7.0 to 8.0 -->
+  <path class="flow" d="M300 1174 V1236"/>
+  <text class="flab" x="308" y="1210">kedatangan</text>
+
+  <!-- Produksi to 8.0 (outer left, like contoh) -->
+  <path class="flow" d="M20 124 H8 V1290 H246"/>
+  <text class="flab" x="12" y="1260">confirm / komplain</text>
+
+  <!-- Admin WSM to 8.0 (outer right) -->
+  <path class="flow" d="M930 250 H980 V1290 H354"/>
+  <text class="flab" x="888" y="1272">approve NTI / BAK</text>
+
+  <!-- shared tms_transaction bus -->
+  <path class="wire" d="M490 610 V1290"/>
+  <path class="wire" d="M354 1290 H490"/>
+  <path class="flow" d="M490 774 H520"/>
+  <text class="flab" x="360" y="1280">close / balik staging</text>
 </svg>

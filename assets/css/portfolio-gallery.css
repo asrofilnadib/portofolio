@@ -115,6 +115,21 @@ svg.flowchart-diagram .cluster rect {
 	stroke: rgba(212, 181, 255, 0.55) !important;
 }
 
+/* Hand-drawn Gane-Sarson DFD (not Mermaid .node) */
+svg.flowchart-diagram circle.proc {
+	fill: #3a4556 !important;
+	stroke: #e6e6e6 !important;
+	stroke-width: 1.8px !important;
+}
+svg.flowchart-diagram rect.ent {
+	fill: #2c3340 !important;
+	stroke: #e6e6e6 !important;
+	stroke-width: 1.6px !important;
+}
+svg.flowchart-diagram .store-line {
+	stroke: #e6e6e6 !important;
+}
+
 .portfolio_gallery .flowchart-host .svg-pan-zoom_viewport {
 	cursor: grab;
 }

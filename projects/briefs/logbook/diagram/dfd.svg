@@ -1,179 +1,179 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1380" width="100%" role="img" aria-label="Logbook Magang data flow diagram">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 1180" width="100%" role="img" aria-label="DFD Level 1 Logbook Magang Gane-Sarson">
   <defs>
-    <marker id="lb-d-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#c9c9c9"/>
+    <marker id="lb-gs-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#e6e6e6"/>
     </marker>
   </defs>
   <style>
-    .band { fill: #17171b; stroke: #333; stroke-width: 1; }
-    .ent { fill: #1f2020; stroke: #8750f7; stroke-width: 1.6; }
-    .proc { fill: #1f2020; stroke: #ccc; stroke-width: 1.5; }
-    .store { fill: #16161a; stroke: #aaa; stroke-width: 1.5; }
-    .label { fill: #e8e8e8; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 13px; text-anchor: middle; }
-    .sub { font-size: 11px; fill: #c9c9c9; }
-    .flow { stroke: #c9c9c9; stroke-width: 1.6; fill: none; marker-end: url(#lb-d-arrow); }
-    .seq { stroke: #8750f7; stroke-width: 1.6; fill: none; marker-end: url(#lb-d-arrow); }
-    .flab { fill: #b8b8b8; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 11px; text-anchor: middle; }
-    .title { fill: #f0e6ff; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 16px; font-weight: 700; text-anchor: middle; }
-    .col { fill: #8a8a8a; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 11px; text-anchor: middle; letter-spacing: 0.4px; }
+    .ent { fill: #2c3340; stroke: #e6e6e6; stroke-width: 1.6; }
+    .proc { fill: #3a4556; stroke: #e6e6e6; stroke-width: 1.8; }
+    .store-line { stroke: #e6e6e6; stroke-width: 1.4; fill: none; }
+    .elab { fill: #f0f0f0; font-family: Georgia, "Times New Roman", serif; font-size: 13px; text-anchor: middle; }
+    .pnum { fill: #f0f0f0; font-family: Georgia, "Times New Roman", serif; font-size: 13px; text-anchor: middle; }
+    .plab { fill: #f0f0f0; font-family: Georgia, "Times New Roman", serif; font-size: 11px; text-anchor: middle; }
+    .slab { fill: #f0f0f0; font-family: Georgia, "Times New Roman", serif; font-size: 12px; text-anchor: middle; }
+    .flab { fill: #cfcfcf; font-family: Georgia, "Times New Roman", serif; font-size: 11px; }
+    .title { fill: #f0f0f0; font-family: Georgia, "Times New Roman", serif; font-size: 15px; text-anchor: middle; }
+    .flow { stroke: #e6e6e6; stroke-width: 1.2; fill: none; marker-end: url(#lb-gs-arrow); }
+    .wire { stroke: #e6e6e6; stroke-width: 1.2; fill: none; }
   </style>
 
-  <text class="title" x="640" y="28">DFD Magang / PKL — satu baris = satu proses</text>
-  <text class="col" x="116" y="52">AKTOR</text>
-  <text class="col" x="500" y="52">PROSES</text>
-  <text class="col" x="1020" y="52">DATA STORE</text>
+  <text class="title" x="460" y="24">DFD Level 1 — Logbook Magang / PKL</text>
 
-  <!-- row bands -->
-  <rect class="band" x="16" y="64" width="1248" height="176" rx="8"/>
-  <rect class="band" x="16" y="252" width="1248" height="176" rx="8"/>
-  <rect class="band" x="16" y="440" width="1248" height="196" rx="8"/>
-  <rect class="band" x="16" y="648" width="1248" height="176" rx="8"/>
-  <rect class="band" x="16" y="836" width="1248" height="176" rx="8"/>
-  <rect class="band" x="16" y="1024" width="1248" height="176" rx="8"/>
+  <!-- entities -->
+  <rect class="ent" x="24" y="44" width="150" height="40"/>
+  <text class="elab" x="99" y="69">Intern</text>
 
-  <!-- ===== ROW 1 Isi Logbook ===== -->
-  <rect class="ent" x="32" y="118" width="168" height="52" rx="4"/>
-  <text class="label" x="116" y="149">Intern</text>
-  <path class="flow" d="M200 144 H370"/>
-  <text class="flab" x="285" y="134">kegiatan, leave, pulsa</text>
+  <rect class="ent" x="730" y="44" width="160" height="48"/>
+  <text class="elab" x="810" y="64">Absensi Server</text>
+  <text class="plab" x="810" y="80">device taps</text>
 
-  <ellipse class="proc" cx="500" cy="144" rx="128" ry="40"/>
-  <text class="label" x="500" y="138">1 Isi Logbook</text>
-  <text class="sub" x="500" y="156">kegiatan / leave / pulsa</text>
+  <rect class="ent" x="24" y="448" width="150" height="36"/>
+  <text class="elab" x="99" y="471">SPV</text>
 
-  <path class="flow" d="M628 144 H800"/>
-  <rect class="store" x="800" y="86" width="440" height="48"/>
-  <line x1="812" y1="86" x2="812" y2="134" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="116">t_magang_logbook</text>
-  <rect class="store" x="800" y="148" width="440" height="48"/>
-  <line x1="812" y1="148" x2="812" y2="196" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="178">t_magang_master</text>
-  <text class="sub" x="1020" y="210">NIK, jenis, SPV, join / end</text>
+  <rect class="ent" x="24" y="500" width="150" height="36"/>
+  <text class="elab" x="99" y="523">Manager</text>
 
-  <!-- seq 1 to 2 -->
-  <path class="seq" d="M500 184 V252"/>
-  <text class="flab" x="548" y="226">lanjut merge</text>
+  <rect class="ent" x="730" y="788" width="160" height="40"/>
+  <text class="elab" x="810" y="813">Admin PIC</text>
 
-  <!-- ===== ROW 2 Merge Absensi ===== -->
-  <rect class="ent" x="32" y="306" width="168" height="56" rx="4"/>
-  <text class="label" x="116" y="328">Absensi Server</text>
-  <text class="sub" x="116" y="346">device taps</text>
-  <path class="flow" d="M200 334 H370"/>
-  <text class="flab" x="285" y="324">clock taps</text>
+  <!-- processes 1.0 - 6.0 -->
+  <circle class="proc" cx="280" cy="140" r="54"/>
+  <text class="pnum" x="280" y="128">1.0</text>
+  <text class="plab" x="280" y="146">Isi Logbook</text>
+  <text class="plab" x="280" y="160">kegiatan / leave</text>
 
-  <ellipse class="proc" cx="500" cy="334" rx="128" ry="40"/>
-  <text class="label" x="500" y="328">2 Merge Absensi</text>
-  <text class="sub" x="500" y="346">shift + t_absensi</text>
+  <circle class="proc" cx="280" cy="310" r="54"/>
+  <text class="pnum" x="280" y="298">2.0</text>
+  <text class="plab" x="280" y="316">Merge Absensi</text>
+  <text class="plab" x="280" y="330">shift + taps</text>
 
-  <path class="flow" d="M628 334 H800"/>
-  <rect class="store" x="800" y="274" width="440" height="52"/>
-  <line x1="812" y1="274" x2="812" y2="326" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="296">t_absensi</text>
-  <text class="sub" x="1020" y="312">absensi_server (juta row)</text>
-  <rect class="store" x="800" y="338" width="440" height="48"/>
-  <line x1="812" y1="338" x2="812" y2="386" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="368">hari_libur</text>
+  <circle class="proc" cx="280" cy="480" r="54"/>
+  <text class="pnum" x="280" y="468">3.0</text>
+  <text class="plab" x="280" y="486">Approval</text>
+  <text class="plab" x="280" y="500">Periode</text>
 
-  <path class="seq" d="M500 374 V440"/>
-  <text class="flab" x="555" y="414">hari kerja</text>
+  <circle class="proc" cx="280" cy="650" r="54"/>
+  <text class="pnum" x="280" y="638">4.0</text>
+  <text class="plab" x="280" y="656">Clip Join / End</text>
+  <text class="plab" x="280" y="670">vs 21-20</text>
 
-  <!-- ===== ROW 3 Approval ===== -->
-  <rect class="ent" x="32" y="468" width="168" height="48" rx="4"/>
-  <text class="label" x="116" y="497">SPV</text>
-  <path class="flow" d="M200 492 H370"/>
-  <text class="flab" x="285" y="482">paraf + approve leave</text>
+  <circle class="proc" cx="280" cy="820" r="54"/>
+  <text class="pnum" x="280" y="808">5.0</text>
+  <text class="plab" x="280" y="826">Claim</text>
+  <text class="plab" x="280" y="840">Uang Saku</text>
 
-  <rect class="ent" x="32" y="532" width="168" height="48" rx="4"/>
-  <text class="label" x="116" y="561">Manager</text>
-  <path class="flow" d="M200 556 H370"/>
-  <text class="flab" x="285" y="546">TTD periode</text>
+  <circle class="proc" cx="280" cy="990" r="54"/>
+  <text class="pnum" x="280" y="978">6.0</text>
+  <text class="plab" x="280" y="996">Export</text>
+  <text class="plab" x="280" y="1010">Excel / PDF</text>
 
-  <ellipse class="proc" cx="500" cy="524" rx="128" ry="44"/>
-  <text class="label" x="500" y="518">3 Approval Periode</text>
-  <text class="sub" x="500" y="536">paraf SPV lalu Manager</text>
+  <!-- data stores: two parallel lines -->
+  <line class="store-line" x1="500" y1="118" x2="720" y2="118"/>
+  <line class="store-line" x1="500" y1="146" x2="720" y2="146"/>
+  <text class="slab" x="610" y="138">t_magang_logbook</text>
 
-  <path class="flow" d="M628 524 H800"/>
-  <rect class="store" x="800" y="498" width="440" height="52"/>
-  <line x1="812" y1="498" x2="812" y2="550" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="520">periode_approval</text>
-  <text class="sub" x="1020" y="536">SPV / Manager TTD</text>
+  <line class="store-line" x1="500" y1="168" x2="720" y2="168"/>
+  <line class="store-line" x1="500" y1="196" x2="720" y2="196"/>
+  <text class="slab" x="610" y="188">t_magang_master</text>
 
-  <path class="seq" d="M500 568 V648"/>
-  <text class="flab" x="555" y="616">siap clip</text>
+  <line class="store-line" x1="500" y1="288" x2="720" y2="288"/>
+  <line class="store-line" x1="500" y1="316" x2="720" y2="316"/>
+  <text class="slab" x="610" y="308">t_absensi</text>
 
-  <!-- ===== ROW 4 Clip ===== -->
-  <rect class="ent" x="32" y="706" width="168" height="52" rx="4"/>
-  <text class="label" x="116" y="737">System</text>
-  <path class="flow" d="M200 732 H370"/>
-  <text class="flab" x="285" y="722">join / end vs 21-20</text>
+  <line class="store-line" x1="500" y1="338" x2="720" y2="338"/>
+  <line class="store-line" x1="500" y1="366" x2="720" y2="366"/>
+  <text class="slab" x="610" y="358">hari_libur</text>
 
-  <ellipse class="proc" cx="500" cy="732" rx="128" ry="40"/>
-  <text class="label" x="500" y="726">4 Clip Join / End</text>
-  <text class="sub" x="500" y="744">overlap vs periode 21-20</text>
+  <line class="store-line" x1="500" y1="458" x2="720" y2="458"/>
+  <line class="store-line" x1="500" y1="486" x2="720" y2="486"/>
+  <text class="slab" x="610" y="478">periode_approval</text>
 
-  <path class="flow" d="M628 732 H800"/>
-  <rect class="store" x="800" y="688" width="440" height="48"/>
-  <line x1="812" y1="688" x2="812" y2="736" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="718">t_magang_master</text>
-  <rect class="store" x="800" y="748" width="440" height="48"/>
-  <line x1="812" y1="748" x2="812" y2="796" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="778">t_magang_logbook</text>
-  <text class="sub" x="1020" y="812">contoh clip: join 5 Jul / finish 16 Agu</text>
+  <line class="store-line" x1="500" y1="798" x2="720" y2="798"/>
+  <line class="store-line" x1="500" y1="826" x2="720" y2="826"/>
+  <text class="slab" x="610" y="818">t_magang_claim</text>
 
-  <path class="seq" d="M500 772 V836"/>
-  <text class="flab" x="560" y="812">jumlah hari</text>
+  <line class="store-line" x1="500" y1="848" x2="720" y2="848"/>
+  <line class="store-line" x1="500" y1="876" x2="720" y2="876"/>
+  <text class="slab" x="610" y="868">t_magang_claim_pulsa</text>
 
-  <!-- ===== ROW 5 Claim ===== -->
-  <rect class="ent" x="32" y="890" width="168" height="52" rx="4"/>
-  <text class="label" x="116" y="921">Admin PIC</text>
-  <path class="flow" d="M200 916 H370"/>
-  <text class="flab" x="285" y="906">generate claim</text>
+  <!-- intern to 1.0 -->
+  <path class="flow" d="M174 64 H220 V140 H226"/>
+  <text class="flab" x="178" y="102">kegiatan, leave, pulsa</text>
 
-  <ellipse class="proc" cx="500" cy="916" rx="128" ry="40"/>
-  <text class="label" x="500" y="910">5 Claim Uang Saku</text>
-  <text class="sub" x="500" y="928">tarif Magang vs PKL</text>
+  <!-- absensi to 2.0 -->
+  <path class="flow" d="M730 68 H680 V310 H334"/>
+  <text class="flab" x="686" y="200">clock taps</text>
 
-  <path class="flow" d="M628 916 H800"/>
-  <rect class="store" x="800" y="858" width="440" height="48"/>
-  <line x1="812" y1="858" x2="812" y2="906" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="888">t_magang_claim</text>
-  <rect class="store" x="800" y="918" width="440" height="48"/>
-  <line x1="812" y1="918" x2="812" y2="966" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="948">t_magang_claim_pulsa</text>
+  <!-- 1.0 to stores -->
+  <path class="flow" d="M334 132 H500"/>
+  <text class="flab" x="360" y="124">isi harian</text>
+  <path class="flow" d="M334 150 H460 V182 H500"/>
+  <text class="flab" x="360" y="168">profil intern</text>
 
-  <path class="seq" d="M500 956 V1024"/>
-  <text class="flab" x="575" y="998">periode + jumlah hari</text>
+  <!-- 1.0 to 2.0 -->
+  <path class="flow" d="M280 194 V256"/>
+  <text class="flab" x="288" y="230">logbook</text>
 
-  <!-- ===== ROW 6 Export ===== -->
-  <rect class="ent" x="32" y="1078" width="168" height="52" rx="4"/>
-  <text class="label" x="116" y="1109">Intern / PIC</text>
-  <path class="flow" d="M200 1104 H370"/>
-  <text class="flab" x="285" y="1094">print / unduh</text>
+  <!-- 2.0 to stores -->
+  <path class="flow" d="M334 302 H500"/>
+  <text class="flab" x="368" y="294">merge taps</text>
+  <path class="flow" d="M334 318 H460 V352 H500"/>
+  <text class="flab" x="368" y="338">libur / cuti</text>
 
-  <ellipse class="proc" cx="500" cy="1104" rx="128" ry="40"/>
-  <text class="label" x="500" y="1098">6 Export</text>
-  <text class="sub" x="500" y="1116">Excel / PDF / Print</text>
+  <!-- 2.0 to 3.0 -->
+  <path class="flow" d="M280 364 V426"/>
+  <text class="flab" x="288" y="400">hari kerja</text>
 
-  <path class="flow" d="M628 1104 H800"/>
-  <rect class="store" x="800" y="1060" width="440" height="48"/>
-  <line x1="812" y1="1060" x2="812" y2="1108" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="1090">t_magang_logbook</text>
-  <rect class="store" x="800" y="1120" width="440" height="48"/>
-  <line x1="812" y1="1120" x2="812" y2="1168" stroke="#aaa" stroke-width="3"/>
-  <text class="label" x="1020" y="1150">t_magang_claim</text>
-  <text class="sub" x="1020" y="1182">label periode sudah ter-clip</text>
+  <!-- SPV / Manager to 3.0 -->
+  <path class="flow" d="M174 466 H226"/>
+  <text class="flab" x="176" y="458">paraf + leave</text>
+  <path class="flow" d="M174 518 H200 V490 H226"/>
+  <text class="flab" x="176" y="540">TTD periode</text>
 
-  <!-- legend -->
-  <rect class="ent" x="32" y="1232" width="24" height="18" rx="2"/>
-  <text class="sub" x="132" y="1246">external entity</text>
-  <ellipse class="proc" cx="280" cy="1241" rx="18" ry="12"/>
-  <text class="sub" x="360" y="1246">process</text>
-  <rect class="store" x="430" y="1232" width="36" height="18"/>
-  <line x1="436" y1="1232" x2="436" y2="1250" stroke="#aaa" stroke-width="2"/>
-  <text class="sub" x="530" y="1246">data store</text>
-  <path class="seq" d="M640 1241 H700"/>
-  <text class="sub" x="790" y="1246">ungu = urutan proses</text>
-  <text class="sub" x="1060" y="1246">Store boleh diulang biar panah pendek</text>
+  <!-- 3.0 to approval store -->
+  <path class="flow" d="M334 480 H500"/>
+  <text class="flab" x="360" y="472">SPV / Mgr TTD</text>
 
-  <text class="sub" x="640" y="1290">SPV paraf dulu, baru Manager TTD. Clip memotong export dan uang saku ke overlap join/end vs 21-20.</text>
+  <!-- 3.0 to 4.0 -->
+  <path class="flow" d="M280 534 V596"/>
+  <text class="flab" x="288" y="570">periode signed</text>
+
+  <!-- 4.0 reads master + logbook via gutter -->
+  <path class="flow" d="M334 640 H450 V182 H500"/>
+  <text class="flab" x="338" y="620">join / end date</text>
+  <path class="wire" d="M334 662 H470"/>
+  <text class="flab" x="338" y="680">hari logbook</text>
+
+  <!-- logbook store bus (1.0, 4.0, 6.0) -->
+  <path class="wire" d="M470 132 V978"/>
+  <path class="flow" d="M470 132 H500"/>
+
+  <!-- 4.0 to 5.0 -->
+  <path class="flow" d="M280 704 V766"/>
+  <text class="flab" x="288" y="740">jumlah hari</text>
+
+  <!-- PIC to 5.0 -->
+  <path class="flow" d="M730 808 H680 V820 H334"/>
+  <text class="flab" x="640" y="800">generate claim</text>
+
+  <!-- 5.0 to claim stores -->
+  <path class="flow" d="M334 812 H500"/>
+  <text class="flab" x="360" y="804">uang saku</text>
+  <path class="flow" d="M334 832 H460 V862 H500"/>
+  <text class="flab" x="360" y="850">claim pulsa</text>
+
+  <!-- 5.0 to 6.0 -->
+  <path class="flow" d="M280 874 V936"/>
+  <text class="flab" x="288" y="910">periode clipped</text>
+
+  <!-- 6.0 reads logbook + claim -->
+  <path class="wire" d="M334 978 H470"/>
+  <text class="flab" x="400" y="960">isi export</text>
+  <path class="flow" d="M334 1002 H450 V812 H500"/>
+  <text class="flab" x="400" y="1040">claim export</text>
+
+  <!-- 6.0 back to Intern -->
+  <path class="flow" d="M226 1010 H8 V64 H24"/>
+  <text class="flab" x="12" y="540">PDF / Excel</text>
 </svg>

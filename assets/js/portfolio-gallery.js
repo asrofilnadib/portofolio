@@ -414,6 +414,16 @@
     }
 
     // Bump inline dark-theme paints so contrast holds even if CSS fails
+    svg.querySelectorAll("circle.proc").forEach(function (el) {
+      el.setAttribute("fill", "#3a4556");
+      el.setAttribute("stroke", "#e6e6e6");
+      el.setAttribute("stroke-width", "1.8");
+    });
+    svg.querySelectorAll("rect.ent").forEach(function (el) {
+      el.setAttribute("fill", "#2c3340");
+      el.setAttribute("stroke", "#e6e6e6");
+      el.setAttribute("stroke-width", "1.6");
+    });
     svg
       .querySelectorAll(".node rect, .node circle, .node ellipse, .node polygon, .node path")
       .forEach(function (el) {
@@ -674,6 +684,8 @@
       }
       try {
         pz.resize();
+        pz.fit();
+        pz.center();
       } catch (_) {
         setPanZoom(host, null);
         ensurePanZoom(host, true);
