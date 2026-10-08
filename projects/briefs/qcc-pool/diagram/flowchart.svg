@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 720" width="100%" role="img" aria-label="QCC Pool flowchart">
+  <defs>
+    <marker id="arrow-qcc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#c9c9c9"/>
+    </marker>
+  </defs>
+  <style>
+    .box { fill: #1f2020; stroke: #ccc; stroke-width: 1.5; }
+    .label { fill: #e8e8e8; font-family: "Trebuchet MS", Verdana, Arial, sans-serif; font-size: 15px; text-anchor: middle; }
+    .edge { stroke: #c9c9c9; stroke-width: 1.5; fill: none; marker-end: url(#arrow-qcc); }
+  </style>
+  <rect class="box" x="160" y="24" width="240" height="48" rx="8"/>
+  <text class="label" x="280" y="53">Admin buka QCC Pool</text>
+  <path class="edge" d="M280 72 V104"/>
+  <rect class="box" x="110" y="104" width="340" height="64" rx="8"/>
+  <text class="label" x="280" y="132">Buat acara, booth, dan soal</text>
+  <text class="label" x="280" y="152" style="font-size:13px">satu soal acak per booth</text>
+  <path class="edge" d="M280 168 V200"/>
+  <rect class="box" x="110" y="200" width="340" height="48" rx="8"/>
+  <text class="label" x="280" y="230">Peserta buka /qcc-pool</text>
+  <path class="edge" d="M280 248 V280"/>
+  <rect class="box" x="110" y="280" width="340" height="64" rx="8"/>
+  <text class="label" x="280" y="308">Pilih booth, tap kartu</text>
+  <text class="label" x="280" y="328" style="font-size:13px">jawab soal yang muncul</text>
+  <path class="edge" d="M280 344 V376"/>
+  <rect class="box" x="110" y="376" width="340" height="48" rx="8"/>
+  <text class="label" x="280" y="406">Skor masuk leaderboard</text>
+  <path class="edge" d="M280 424 V456"/>
+  <rect class="box" x="160" y="456" width="240" height="48" rx="8"/>
+  <text class="label" x="280" y="485">Papan acara</text>
+</svg>

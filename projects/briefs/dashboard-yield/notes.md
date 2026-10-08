@@ -1,6 +1,6 @@
-# Dashboard Yield
+# Dashboard Seasoning 2
 
-Board yield Seasoning 2 / PRS2 di MyPAS. Route: `/seas2/dashboard-yield`.
+Board yield Seasoning 2 / PRS2 di MyPAS (judul portofolio: Dashboard Seasoning 2). Route: `/seas2/dashboard-yield`.
 
 ## Flow
 1. User buka board; akses dibatasi ke Seasoning 2

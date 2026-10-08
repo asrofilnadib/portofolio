@@ -3,7 +3,8 @@
 .portfolio_gallery .gallery_item[data-type="flowchart"],
 .portfolio_gallery .gallery_item[data-type="youtube"],
 .portfolio_gallery .gallery_item[data-type="ppt"],
-.portfolio_gallery .gallery_item[data-type="coming-soon"] {
+.portfolio_gallery .gallery_item[data-type="coming-soon"],
+.portfolio_gallery .gallery_item[data-type="screenshot"] {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -372,6 +373,18 @@ html.flowchart-lightbox-open body {
 	text-transform: uppercase;
 	color: var(--tj-theme-primary, #8750f7);
 	text-align: center;
+}
+
+.portfolio_gallery .gallery_item[data-type="screenshot"] img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: contain;
+	object-position: center top;
+	background: #0d1117;
+	border: 1px solid rgba(135, 80, 247, 0.45);
+	border-radius: 12px;
+	box-shadow: inset 0 0 0 1px rgba(183, 148, 246, 0.12);
 }
 
 .portfolio_gallery .coming-soon-host {
