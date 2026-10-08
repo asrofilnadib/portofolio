@@ -1,0 +1,25 @@
+---
+description: Update angka Project Completed setiap ada project baru di portofolio
+alwaysApply: true
+---
+
+# Project Completed
+
+Setiap project yang masuk galeri portofolio harus ikut ke counter hero **Project Completed**.
+
+## Sumber angka
+
+Satu kartu = satu project. Hitung `.portfolio-item` di `index.html` (section Works).
+
+Lokasi counter: `.funfact-area` → odometer `data-stat="projects"` (`data-count`). Suffix `+` di HTML jangan dihapus.
+
+`assets/js/main.js` menyalin jumlah kartu ke `data-count` saat load. Tetap set `data-count` di HTML supaya angka awal benar sebelum JS jalan.
+
+## Wajib saat tambah / hapus project
+
+1. Tambah atau hapus kartu `.portfolio-item` (dan modal case study-nya).
+2. Hitung ulang `.portfolio-item`.
+3. Update `data-count` di odometer Project Completed ke angka itu.
+4. Jangan sentuh Years of Experience, Companies Worked With, atau Certification kecuali user minta.
+
+Sekarang harus **32** kartu. Kalau jumlah kartu berubah, `data-count` harus ikut.
