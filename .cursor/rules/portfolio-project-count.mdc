@@ -22,4 +22,4 @@ Lokasi counter: `.funfact-area` → odometer `data-stat="projects"` (`data-count
 3. Update `data-count` di odometer Project Completed ke angka itu.
 4. Jangan sentuh Years of Experience, Companies Worked With, atau Certification kecuali user minta.
 
-Sekarang harus **32** kartu. Kalau jumlah kartu berubah, `data-count` harus ikut.
+Sekarang harus **35** kartu. Kalau jumlah kartu berubah, `data-count` harus ikut.

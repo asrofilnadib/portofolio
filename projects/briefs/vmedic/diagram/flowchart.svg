@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" font-family="Inter, sans-serif" font-size="14">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#8750f7"/>
+    </marker>
+  </defs>
+  <rect width="960" height="420" fill="#0f0a1a"/>
+  <g fill="#e6edf3">
+    <rect x="40" y="40" width="160" height="56" rx="12" fill="#1a1228" stroke="#8750f7"/>
+    <text x="120" y="72" text-anchor="middle">Login / Outlet</text>
+    <rect x="260" y="40" width="180" height="56" rx="12" fill="#1a1228" stroke="#8750f7"/>
+    <text x="350" y="72" text-anchor="middle">Apotek POS (FEFO)</text>
+    <rect x="500" y="40" width="180" height="56" rx="12" fill="#1a1228" stroke="#8750f7"/>
+    <text x="590" y="72" text-anchor="middle">Klinik EMR</text>
+    <rect x="740" y="40" width="180" height="56" rx="12" fill="#1a1228" stroke="#8750f7"/>
+    <text x="830" y="72" text-anchor="middle">Laporan &amp; Jurnal</text>
+    <line x1="200" y1="68" x2="260" y2="68" stroke="#8750f7" stroke-width="2" marker-end="url(#arr)"/>
+    <line x1="440" y1="68" x2="500" y2="68" stroke="#8750f7" stroke-width="2" marker-end="url(#arr)"/>
+    <line x1="680" y1="68" x2="740" y2="68" stroke="#8750f7" stroke-width="2" marker-end="url(#arr)"/>
+    <rect x="120" y="180" width="720" height="180" rx="16" fill="#1a1228" stroke="#58a6ff" stroke-dasharray="6 4"/>
+    <text x="480" y="220" text-anchor="middle" font-size="16" font-weight="600">Go API + MySQL + React</text>
+    <text x="480" y="260" text-anchor="middle" fill="#9aa7b5">RBAC · multi-outlet · audit · inventory batches</text>
+    <text x="480" y="300" text-anchor="middle" fill="#9aa7b5">Expo mobile (field &amp; antrean) shares the same contract</text>
+  </g>
+</svg>

@@ -306,6 +306,7 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			".stack-webrtc": "Highlight: WebRTC / JavaFX live media",
 			".stack-firebase": "Highlight: Firebase / Firestore",
 			".stack-nodejs": "Highlight: Node.js / industrial I/O",
+			".stack-golang": "Highlight: Go APIs and services",
 		};
 
 		var companyFilter = "*";
@@ -347,10 +348,31 @@ Description: Gerold - Personal Portfolio HTML5 Template
 
 		// Stack filter (AND with company)
 		$(".stack-filter-button-group").on("click", "button", function () {
-			$(".stack-filter-button-group button").removeClass("active");
+			if ($(this).hasClass("stack-filter-toggle")) {
+				return;
+			}
+			$(".stack-filter-button-group button[data-stack-filter]").removeClass("active");
 			$(this).addClass("active");
 			stackFilter = $(this).attr("data-stack-filter") || "*";
 			applyPortfolioFilters();
+		});
+
+		$(".stack-filter-toggle").on("click", function () {
+			var $group = $(".stack-filter-button-group");
+			var $extra = $group.find(".stack-filter-extra");
+			var expanded = !$group.hasClass("is-expanded");
+			$group.toggleClass("is-expanded", expanded);
+			$(this).attr("aria-expanded", expanded ? "true" : "false");
+			if ($extra.length) {
+				if (expanded) {
+					$extra.removeAttr("hidden");
+				} else {
+					$extra.attr("hidden", "");
+				}
+			}
+			var $group = $(".stack-filter-button-group");
+			var $active = $group.find("button.active[data-stack-filter]").first();
+			activeFilterBtn($group.find(".active-bg"), $active, $group);
 		});
 
 		/*------------------------------------------------------
@@ -618,8 +640,8 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			$(".portfolio-filter .button-group").each(function () {
 				var $group = $(this);
 				var active_bg = $group.find(".active-bg");
-				var element = $group.find("button.active");
-				$group.find("button").on("click", function () {
+				var element = $group.find("button.active:not(.stack-filter-toggle)").first();
+				$group.find("button:not(.stack-filter-toggle)").on("click", function () {
 					activeFilterBtn(active_bg, $(this), $group);
 				});
 				activeFilterBtn(active_bg, element, $group);

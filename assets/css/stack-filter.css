@@ -1,0 +1,32 @@
+/* Stack filter: primary buttons + expandable secondary stacks */
+.portfolio-filter .stack-filter-button-group {
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: min(96vw, 720px);
+}
+.portfolio-filter .stack-filter-button-group .stack-filter-extra {
+	display: none;
+	align-items: center;
+	gap: 0;
+}
+.portfolio-filter .stack-filter-button-group.is-expanded .stack-filter-extra {
+	display: inline-flex;
+}
+.portfolio-filter .stack-filter-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 40px;
+	padding: 9px 12px !important;
+	color: rgba(230, 237, 243, 0.72);
+}
+.portfolio-filter .stack-filter-button-group.is-expanded .stack-filter-toggle i {
+	transform: rotate(180deg);
+}
+.portfolio-filter .stack-filter-toggle i {
+	display: inline-block;
+	transition: transform 0.25s ease;
+}
+.portfolio-filter .stack-filter-button-group.is-expanded {
+	white-space: normal;
+}

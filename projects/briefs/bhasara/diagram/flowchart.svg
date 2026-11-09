@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" font-family="Inter, sans-serif" font-size="14">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#f778ba"/>
+    </marker>
+  </defs>
+  <rect width="960" height="420" fill="#14100c"/>
+  <g fill="#f3ece4">
+    <rect x="60" y="50" width="170" height="52" rx="12" fill="#231a14" stroke="#ffa657"/>
+    <text x="145" y="80" text-anchor="middle">Onboarding</text>
+    <rect x="280" y="50" width="170" height="52" rx="12" fill="#231a14" stroke="#ffa657"/>
+    <text x="365" y="80" text-anchor="middle">Modules &amp; Practice</text>
+    <rect x="500" y="50" width="170" height="52" rx="12" fill="#231a14" stroke="#ffa657"/>
+    <text x="585" y="80" text-anchor="middle">SRS queue</text>
+    <rect x="720" y="50" width="180" height="52" rx="12" fill="#231a14" stroke="#ffa657"/>
+    <text x="810" y="80" text-anchor="middle">Mock exams</text>
+    <line x1="230" y1="76" x2="280" y2="76" stroke="#ffa657" stroke-width="2" marker-end="url(#arr)"/>
+    <line x1="450" y1="76" x2="500" y2="76" stroke="#ffa657" stroke-width="2" marker-end="url(#arr)"/>
+    <line x1="670" y1="76" x2="720" y2="76" stroke="#ffa657" stroke-width="2" marker-end="url(#arr)"/>
+    <rect x="120" y="170" width="720" height="190" rx="16" fill="#231a14" stroke="#f778ba"/>
+    <text x="480" y="215" text-anchor="middle" font-size="16" font-weight="600">Content-driven curriculum (EN + ZH)</text>
+    <text x="480" y="255" text-anchor="middle" fill="#c9b8a8">Go API · React web · Flutter mobile · MySQL</text>
+    <text x="480" y="295" text-anchor="middle" fill="#c9b8a8">Original modules under content/  languages ship as data</text>
+  </g>
+</svg>

@@ -274,6 +274,43 @@
     "prefixes": [],
     "company": "others"
   },
+  "vmedic": {
+    "title": "VMedic",
+    "owner": "asrofilnadib",
+    "repo": "vmedic",
+    "branch": "main",
+    "author": "asrofilnadib",
+    "prefixes": [
+      "vmedic",
+      "v-medic"
+    ],
+    "company": "others"
+  },
+  "bhasara": {
+    "title": "Bhasara",
+    "owner": "asrofilnadib",
+    "repo": "bhasara",
+    "branch": "main",
+    "author": "asrofilnadib",
+    "prefixes": [
+      "bhasara"
+    ],
+    "company": "others"
+  },
+  "stock-opname": {
+    "title": "Stock Opname",
+    "owner": "asrofilnadib",
+    "repo": "so_arbi",
+    "branch": "main",
+    "author": "asrofilnadib",
+    "prefixes": [
+      "so-arbi",
+      "so_arbi",
+      "stock-opname",
+      "stock_opname"
+    ],
+    "company": "others"
+  },
   "labqc": {
     "title": "Lab QC",
     "owner": "asrofilnadib",

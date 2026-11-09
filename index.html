@@ -28,6 +28,7 @@
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/commits.css">
+  <link rel="stylesheet" href="assets/css/stack-filter.css">
   <link rel="stylesheet" href="assets/css/watch-demo.css">
   <link rel="stylesheet" href="assets/css/hire-me.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css">
@@ -207,7 +208,7 @@
           </div>
           <div class="col-6 col-lg-3">
             <div class="funfact-item d-flex flex-column flex-sm-row flex-wrap align-items-center">
-              <div class="number"><span class="odometer" data-count="32" data-stat="projects">0</span>+</div>
+              <div class="number"><span class="odometer" data-count="35" data-stat="projects">0</span>+</div>
               <div class="text">Project <br>Completed</div>
             </div>
           </div>
@@ -682,11 +683,17 @@
             <div class="button-group stack-filter-button-group" role="group" aria-label="Filter by stack">
               <button type="button" data-stack-filter="*" class="active">All</button>
               <button type="button" data-stack-filter=".stack-laravel">Laravel</button>
-              <button type="button" data-stack-filter=".stack-react">React</button>
-              <button type="button" data-stack-filter=".stack-ai">AI</button>
-              <button type="button" data-stack-filter=".stack-webrtc">Java</button>
-              <button type="button" data-stack-filter=".stack-firebase">Firebase</button>
-              <button type="button" data-stack-filter=".stack-nodejs">Node.js</button>
+              <button type="button" data-stack-filter=".stack-golang">Golang</button>
+              <button type="button" data-stack-filter=".stack-nodejs">Node.JS</button>
+              <button type="button" data-stack-filter=".stack-react">React.JS</button>
+              <span class="stack-filter-extra" id="stack-filter-extra" hidden>
+                <button type="button" data-stack-filter=".stack-ai">AI</button>
+                <button type="button" data-stack-filter=".stack-webrtc">Java</button>
+                <button type="button" data-stack-filter=".stack-firebase">Firebase</button>
+              </span>
+              <button type="button" class="stack-filter-toggle" aria-expanded="false" aria-controls="stack-filter-extra" title="More stacks" aria-label="Show more stack filters">
+                <i class="fa-light fa-angle-down" aria-hidden="true"></i>
+              </button>
               <div class="active-bg"></div>
             </div>
           </div>
@@ -706,6 +713,45 @@
                 <p>Online exam with InsightFace enrollment/verify and YOLO proctoring for person-count monitoring.</p>
                 <i class="flaticon-up-right-arrow"></i>
                 <button data-mfp-src="#portfolio-wrapper-psikotes" class="portfolio-link modal-popup"></button>
+              </div>
+            </div>
+
+            <!-- Others — VMedic -->
+            <div class="portfolio-item others stack-golang stack-react">
+              <div class="image-box">
+                <img src="projects/briefs/vmedic/screenshots/thumbnail_vmedic.png" alt="VMedic">
+              </div>
+              <div class="content-box">
+                <h3 class="portfolio-title">VMedic</h3>
+                <p>Pharmacy and clinic ops on one Go API: POS with FEFO batches, EMR visits, cashier, and finance reports per outlet.</p>
+                <i class="flaticon-up-right-arrow"></i>
+                <button data-mfp-src="#portfolio-wrapper-vmedic" class="portfolio-link modal-popup"></button>
+              </div>
+            </div>
+
+            <!-- Others — Bhasara -->
+            <div class="portfolio-item others stack-golang stack-react">
+              <div class="image-box">
+                <img src="projects/briefs/bhasara/screenshots/thumbnail_bhasara.png" alt="Bhasara">
+              </div>
+              <div class="content-box">
+                <h3 class="portfolio-title">Bhasara</h3>
+                <p>Structured language learning—English and Mandarin first—with modules, SRS, mock exams, and mobile parity on original curriculum files.</p>
+                <i class="flaticon-up-right-arrow"></i>
+                <button data-mfp-src="#portfolio-wrapper-bhasara" class="portfolio-link modal-popup"></button>
+              </div>
+            </div>
+
+            <!-- Others — Stock Opname -->
+            <div class="portfolio-item others stack-golang stack-react">
+              <div class="image-box">
+                <img src="projects/briefs/stock-opname/screenshots/thumbnail_stock_opname.png" alt="Stock Opname">
+              </div>
+              <div class="content-box">
+                <h3 class="portfolio-title">Stock Opname</h3>
+                <p>Live shop stock for Arbi’s warung: master items, goods in/out, one running balance, and opname sessions when the shelf count drifts.</p>
+                <i class="flaticon-up-right-arrow"></i>
+                <button data-mfp-src="#portfolio-wrapper-stock-opname" class="portfolio-link modal-popup"></button>
               </div>
             </div>
 
@@ -1128,6 +1174,247 @@
   <!-- PORTFOLIO SECTION END -->
 
   <!-- start: Portfolio Popup -->
+  <div id="portfolio-wrapper-vmedic" class="popup_content_area zoom-anim-dialog mfp-hide">
+    <div class="popup_modal_img"><img src="projects/briefs/vmedic/screenshots/thumbnail_vmedic.png" alt="VMedic"></div>
+    <div class="popup_modal_content">
+      <div class="portfolio_info">
+        <div class="portfolio_info_text">
+          <h2 class="title">VMedic</h2>
+          <div class="desc"><p>One outlet login, then apotek POS, klinik EMR, and keuangan on the same session—multi-outlet RBAC and audit on top of MySQL.</p></div>
+          <div class="portfolio-modal-actions">
+            <a href="#" class="btn tj-btn-primary btn-watch-demo is-disabled" data-demo-youtube="" aria-disabled="true" title="Demo coming soon">Watch Demo <i class="fab fa-youtube"></i><span class="btn-watch-demo-soon">coming soon</span></a>
+            <a href="#" class="btn tj-btn-primary btn-commits" data-commits-project="vmedic" data-commits-title="VMedic">View Commits <i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="portfolio_info_items">
+          <div class="info_item"><div class="key">Category</div><div class="value">Health / Pharmacy &amp; Clinic</div></div>
+          <div class="info_item"><div class="key">Client</div><div class="value">Personal product</div></div>
+          <div class="info_item"><div class="key">Delivery Date</div><div class="value">2025–2026</div></div>
+          <div class="info_item"><div class="key">Stack</div><div class="value">Go, React, MySQL, Expo</div></div>
+        </div>
+      </div>
+      <div class="portfolio_gallery owl-carousel">
+        <div class="gallery_item" data-type="coming-soon">
+          <div class="coming-soon-host" role="img" aria-label="Business process video coming soon">
+            <p class="coming-soon-title">video sistem VMedic coming soon</p>
+            <p class="coming-soon-client">Personal product</p>
+          </div>
+          <p class="gallery_caption">Business Process</p>
+        </div>
+        <div class="gallery_item" data-type="screenshot">
+          <img src="projects/briefs/vmedic/screenshots/02-dashboard.png" alt="VMedic beranda">
+          <p class="gallery_caption">Beranda</p>
+        </div>
+        <div class="gallery_item" data-type="screenshot">
+          <img src="projects/briefs/vmedic/screenshots/03-pos.png" alt="VMedic penjualan">
+          <p class="gallery_caption">Apotek POS</p>
+        </div>
+        <div class="gallery_item" data-type="screenshot">
+          <img src="projects/briefs/vmedic/screenshots/04-stok.png" alt="VMedic stok batch">
+          <p class="gallery_caption">Stok &amp; batch</p>
+        </div>
+        <div class="gallery_item" data-type="flowchart" data-flowchart-src="./projects/briefs/vmedic/diagram/flowchart.svg?v=1">
+          <div class="flowchart-host" aria-label="VMedic flowchart"></div>
+          <p class="gallery_caption">Flowchart</p>
+        </div>
+      </div>
+      <div class="portfolio_description">
+        <h2 class="title">Project Description</h2>
+        <div class="desc"><p>VMedic is a pharmacy–clinic monorego: Go API with OpenAPI contract, React web for counters and back office, and Expo for mobile. Inventory respects FEFO batches; clinical and cashier flows share outlets and roles.</p></div>
+        <div class="portfolio_key_features">
+          <div class="key_features_title"><h4 class="title">Key Features</h4></div>
+          <ul class="key_features_list">
+            <li>Multi-outlet RBAC and audit trail</li>
+            <li>Apotek POS, pembelian, and batch stock</li>
+            <li>Klinik EMR, lab, and kasir</li>
+            <li>Keuangan jurnal and operational reports</li>
+            <li>OpenAPI-first API + typed web client</li>
+          </ul>
+        </div>
+      </div>
+      <div class="portfolio_story_approach">
+        <div class="portfolio_story">
+          <div class="story_title"><h4 class="title">The Story</h4></div>
+          <div class="story_content">
+            <p>Apotek–klinik bundles in Indonesia still lean on spreadsheets or closed POS. I wanted one system where the owner sees stock, visits, and money in one place—without re-entering the same patient or SKU on every screen.</p>
+          </div>
+        </div>
+        <div class="portfolio_approach">
+          <div class="approach_title"><h4 class="title">My Approach</h4></div>
+          <div class="approach_content">
+            <p>I started from the OpenAPI contract and golang-migrate schema, then layered auth, outlets, and domain modules (apotek, klinik, keuangan). The React app uses shared tokens; Expo reuses the same API for antrean and field use.</p>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio_navigation">
+        <div class="navigation_item prev-project"><a href="#" class="project"><div class="nav_project"></div></a></div>
+        <div class="navigation_item next-project"><a href="#" class="project"><div class="nav_project"></div></a></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="portfolio-wrapper-bhasara" class="popup_content_area zoom-anim-dialog mfp-hide">
+    <div class="popup_modal_img"><img src="projects/briefs/bhasara/screenshots/thumbnail_bhasara.png" alt="Bhasara"></div>
+    <div class="popup_modal_content">
+      <div class="portfolio_info">
+        <div class="portfolio_info_text">
+          <h2 class="title">Bhasara</h2>
+          <div class="desc"><p>Original curriculum in <code>content/</code>, Go API, React web, and Flutter mobile—SRS and mock exams share the same progress store.</p></div>
+          <div class="portfolio-modal-actions">
+            <a href="#" class="btn tj-btn-primary btn-watch-demo is-disabled" data-demo-youtube="" aria-disabled="true" title="Demo coming soon">Watch Demo <i class="fab fa-youtube"></i><span class="btn-watch-demo-soon">coming soon</span></a>
+            <a href="#" class="btn tj-btn-primary btn-commits" data-commits-project="bhasara" data-commits-title="Bhasara">View Commits <i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="portfolio_info_items">
+          <div class="info_item"><div class="key">Category</div><div class="value">EdTech / Language</div></div>
+          <div class="info_item"><div class="key">Client</div><div class="value">Personal product</div></div>
+          <div class="info_item"><div class="key">Delivery Date</div><div class="value">2025–2026</div></div>
+          <div class="info_item"><div class="key">Stack</div><div class="value">Go, React, Flutter, MySQL</div></div>
+        </div>
+      </div>
+      <div class="portfolio_gallery owl-carousel">
+        <div class="gallery_item" data-type="coming-soon">
+          <div class="coming-soon-host" role="img" aria-label="Business process video coming soon">
+            <p class="coming-soon-title">video sistem Bhasara coming soon</p>
+            <p class="coming-soon-client">Personal product</p>
+          </div>
+          <p class="gallery_caption">Business Process</p>
+        </div>
+        <div class="gallery_item" data-type="screenshot">
+          <img src="projects/briefs/bhasara/screenshots/01-login.png" alt="Bhasara login">
+          <p class="gallery_caption">Login</p>
+        </div>
+        <div class="gallery_item" data-type="screenshot">
+          <img src="projects/briefs/bhasara/screenshots/04-modules.png" alt="Bhasara modules">
+          <p class="gallery_caption">Modules</p>
+        </div>
+        <div class="gallery_item" data-type="screenshot">
+          <img src="projects/briefs/bhasara/screenshots/05-mock-exams.png" alt="Bhasara mock exams">
+          <p class="gallery_caption">Mock exams</p>
+        </div>
+        <div class="gallery_item" data-type="flowchart" data-flowchart-src="./projects/briefs/bhasara/diagram/flowchart.svg?v=1">
+          <div class="flowchart-host" aria-label="Bhasara flowchart"></div>
+          <p class="gallery_caption">Flowchart</p>
+        </div>
+      </div>
+      <div class="portfolio_description">
+        <h2 class="title">Project Description</h2>
+        <div class="desc"><p>Bhasara teaches English and Mandarin through leveled modules, spaced repetition, dialogs, grammar drills, and timed mock exams. New languages are mostly new content packs—not new product code.</p></div>
+        <div class="portfolio_key_features">
+          <div class="key_features_title"><h4 class="title">Key Features</h4></div>
+          <ul class="key_features_list">
+            <li>Contentlint + seed from <code>content/</code></li>
+            <li>Module practice and SRS (SM-2)</li>
+            <li>Mock exam runner with scoring</li>
+            <li>Mandarin tools (pinyin → hanzi)</li>
+            <li>Flutter mobile with API parity</li>
+          </ul>
+        </div>
+      </div>
+      <div class="portfolio_story_approach">
+        <div class="portfolio_story">
+          <div class="story_title"><h4 class="title">The Story</h4></div>
+          <div class="story_content">
+            <p>Commercial language apps ship huge marketed banks, but the learning path is opaque. I wanted a structured path (levels, modules, SRS) with content I own and can extend language by language.</p>
+          </div>
+        </div>
+        <div class="portfolio_approach">
+          <div class="approach_title"><h4 class="title">My Approach</h4></div>
+          <div class="approach_content">
+            <p>The playbook phases lock scope: recon, content model, Go API, React shell, then mobile. OpenAPI drives the web client; Flutter follows the same endpoints. Everything funnels through migrations and contentlint before seed.</p>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio_navigation">
+        <div class="navigation_item prev-project"><a href="#" class="project"><div class="nav_project"></div></a></div>
+        <div class="navigation_item next-project"><a href="#" class="project"><div class="nav_project"></div></a></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="portfolio-wrapper-stock-opname" class="popup_content_area zoom-anim-dialog mfp-hide">
+    <div class="popup_modal_img"><img src="projects/briefs/stock-opname/screenshots/thumbnail_stock_opname.png" alt="Stock Opname"></div>
+    <div class="popup_modal_content">
+      <div class="portfolio_info">
+        <div class="portfolio_info_text">
+          <h2 class="title">Stock Opname</h2>
+          <div class="desc"><p>Warung stock ledger for Arbi: barang master, goods in and out, live saldo, and opname when the shelf no longer matches the system.</p></div>
+          <div class="portfolio-modal-actions">
+            <a href="#" class="btn tj-btn-primary btn-watch-demo is-disabled" data-demo-youtube="" aria-disabled="true" title="Demo coming soon">Watch Demo <i class="fab fa-youtube"></i><span class="btn-watch-demo-soon">coming soon</span></a>
+            <a href="#" class="btn tj-btn-primary btn-commits" data-commits-project="stock-opname" data-commits-title="Stock Opname">View Commits <i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="portfolio_info_items">
+          <div class="info_item"><div class="key">Category</div><div class="value">Retail / Inventory</div></div>
+          <div class="info_item"><div class="key">Client</div><div class="value">Arbi (collaboration)</div></div>
+          <div class="info_item"><div class="key">Delivery Date</div><div class="value">2025–2026</div></div>
+          <div class="info_item"><div class="key">Stack</div><div class="value">Go, React, Expo, MySQL</div></div>
+        </div>
+      </div>
+      <div class="portfolio_gallery owl-carousel">
+        <div class="gallery_item" data-type="coming-soon">
+          <div class="coming-soon-host" role="img" aria-label="Business process video coming soon">
+            <p class="coming-soon-title">video sistem Stock Opname coming soon</p>
+            <p class="coming-soon-client">Warung Arbian</p>
+          </div>
+          <p class="gallery_caption">Business Process</p>
+        </div>
+        <div class="gallery_item" data-type="screenshot">
+          <img src="projects/briefs/stock-opname/screenshots/02-dashboard.png" alt="Stock Opname dashboard">
+          <p class="gallery_caption">Beranda</p>
+        </div>
+        <div class="gallery_item" data-type="screenshot">
+          <img src="projects/briefs/stock-opname/screenshots/01-login.png" alt="Stock Opname login">
+          <p class="gallery_caption">Masuk</p>
+        </div>
+        <div class="gallery_item" data-type="screenshot">
+          <img src="projects/briefs/stock-opname/screenshots/04-transaksi.png" alt="Stock Opname transaksi">
+          <p class="gallery_caption">Transaksi</p>
+        </div>
+        <div class="gallery_item" data-type="screenshot">
+          <img src="projects/briefs/stock-opname/screenshots/05-opname.png" alt="Stock Opname sesi">
+          <p class="gallery_caption">Opname</p>
+        </div>
+        <div class="gallery_item" data-type="flowchart" data-flowchart-src="./projects/briefs/stock-opname/diagram/flowchart.svg?v=1">
+          <div class="flowchart-host" aria-label="Stock Opname flowchart"></div>
+          <p class="gallery_caption">Flowchart</p>
+        </div>
+      </div>
+      <div class="portfolio_description">
+        <h2 class="title">Project Description</h2>
+        <div class="desc"><p>SO Arbi replaces warung notes with a small Go API, React cashier/back office, and Expo for mobile captures. Stock moves update balance immediately; opname sessions reconcile physical counts.</p></div>
+        <div class="portfolio_key_features">
+          <div class="key_features_title"><h4 class="title">Key Features</h4></div>
+          <ul class="key_features_list">
+            <li>Master barang and live saldo</li>
+            <li>Masuk / keluar with audit</li>
+            <li>Stock opname workflow</li>
+            <li>WebSocket refresh on the web</li>
+            <li>Role-based admin vs staf</li>
+          </ul>
+        </div>
+      </div>
+      <div class="portfolio_story_approach">
+        <div class="portfolio_story">
+          <div class="story_title"><h4 class="title">The Story</h4></div>
+          <div class="story_content">
+            <p>Arbi’s warung still relied on mental math and paper when goods moved fast. We needed something a kasir could tap through without training—and an opname mode when the rack disagrees with the book.</p>
+          </div>
+        </div>
+        <div class="portfolio_approach">
+          <div class="approach_title"><h4 class="title">My Approach</h4></div>
+          <div class="approach_content">
+            <p>I split capstones in <code>docs/capstones</code>, shipped the Go API with goose migrations first, then React for daily use and Expo for floor checks. Real-time updates keep multiple browsers on the same saldo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio_navigation">
+        <div class="navigation_item prev-project"><a href="#" class="project"><div class="nav_project"></div></a></div>
+        <div class="navigation_item next-project"><a href="#" class="project"><div class="nav_project"></div></a></div>
+      </div>
+    </div>
+  </div>
+
    <!-- Kastara - Kain Nusantara -->
   <div id="portfolio-wrapper-kastara" class="popup_content_area zoom-anim-dialog mfp-hide">
     <div class="popup_modal_img">
