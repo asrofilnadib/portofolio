@@ -680,22 +680,33 @@
               <div class="active-bg"></div>
             </div>
 
-            <div class="button-group stack-filter-button-group" role="group" aria-label="Filter by stack">
-              <button type="button" data-stack-filter="*" class="active">All</button>
-              <button type="button" data-stack-filter=".stack-laravel">Laravel</button>
-              <button type="button" data-stack-filter=".stack-golang">Golang</button>
-              <button type="button" data-stack-filter=".stack-nodejs">Node.JS</button>
-              <button type="button" data-stack-filter=".stack-react">React.JS</button>
-              <span class="stack-filter-extra" id="stack-filter-extra" hidden>
-                <button type="button" data-stack-filter=".stack-ai">AI</button>
-                <button type="button" data-stack-filter=".stack-webrtc">Java</button>
-                <button type="button" data-stack-filter=".stack-firebase">Firebase</button>
-              </span>
-              <button type="button" class="stack-filter-toggle" aria-expanded="false" aria-controls="stack-filter-extra" title="More stacks" aria-label="Show more stack filters">
-                <i class="fa-light fa-angle-down" aria-hidden="true"></i>
-              </button>
-              <div class="active-bg"></div>
+            <div class="stack-filter-row">
+              <div class="button-group stack-filter-button-group" role="group" aria-label="Filter by stack">
+                <button type="button" data-stack-filter="*" class="active">All</button>
+                <button type="button" data-stack-filter=".stack-laravel">Laravel</button>
+                <button type="button" data-stack-filter=".stack-golang">Golang</button>
+                <button type="button" data-stack-filter=".stack-nodejs">Node.JS</button>
+                <button type="button" data-stack-filter=".stack-react">React.JS</button>
+                <div class="active-bg"></div>
+              </div>
+              <div class="stack-filter-more-capsule">
+                <button type="button" class="stack-filter-more" aria-haspopup="menu" aria-expanded="false" aria-controls="stack-filter-menu" title="Stack lainnya (AI, Java, Firebase)" aria-label="Filter stack lainnya">
+                  <i class="fa-light fa-ellipsis" aria-hidden="true"></i>
+                </button>
+              </div>
             </div>
+            <ul class="stack-filter-dropdown" id="stack-filter-menu" role="menu" hidden>
+              <li class="stack-filter-dropdown__label" role="presentation">Stack lainnya</li>
+              <li role="none">
+                <button type="button" role="menuitem" data-stack-filter=".stack-ai">AI</button>
+              </li>
+              <li role="none">
+                <button type="button" role="menuitem" data-stack-filter=".stack-webrtc">Java</button>
+              </li>
+              <li role="none">
+                <button type="button" role="menuitem" data-stack-filter=".stack-firebase">Firebase</button>
+              </li>
+            </ul>
           </div>
 
           <div class="portfolio-showcase is-collapsed wow fadeInUp" data-wow-delay=".6s">
@@ -1213,7 +1224,7 @@
           <img src="projects/briefs/vmedic/screenshots/04-stok.png" alt="VMedic stok batch">
           <p class="gallery_caption">Stok &amp; batch</p>
         </div>
-        <div class="gallery_item" data-type="flowchart" data-flowchart-src="./projects/briefs/vmedic/diagram/flowchart.svg?v=1">
+        <div class="gallery_item" data-type="flowchart" data-flowchart-src="./projects/briefs/vmedic/diagram/flowchart.svg?v=2">
           <div class="flowchart-host" aria-label="VMedic flowchart"></div>
           <p class="gallery_caption">Flowchart</p>
         </div>
@@ -1292,7 +1303,7 @@
           <img src="projects/briefs/bhasara/screenshots/05-mock-exams.png" alt="Bhasara mock exams">
           <p class="gallery_caption">Mock exams</p>
         </div>
-        <div class="gallery_item" data-type="flowchart" data-flowchart-src="./projects/briefs/bhasara/diagram/flowchart.svg?v=1">
+        <div class="gallery_item" data-type="flowchart" data-flowchart-src="./projects/briefs/bhasara/diagram/flowchart.svg?v=2">
           <div class="flowchart-host" aria-label="Bhasara flowchart"></div>
           <p class="gallery_caption">Flowchart</p>
         </div>
@@ -1375,7 +1386,7 @@
           <img src="projects/briefs/stock-opname/screenshots/05-opname.png" alt="Stock Opname sesi">
           <p class="gallery_caption">Opname</p>
         </div>
-        <div class="gallery_item" data-type="flowchart" data-flowchart-src="./projects/briefs/stock-opname/diagram/flowchart.svg?v=1">
+        <div class="gallery_item" data-type="flowchart" data-flowchart-src="./projects/briefs/stock-opname/diagram/flowchart.svg?v=2">
           <div class="flowchart-host" aria-label="Stock Opname flowchart"></div>
           <p class="gallery_caption">Flowchart</p>
         </div>

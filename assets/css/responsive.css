@@ -711,11 +711,21 @@
 	.portfolio-filter {
 		gap: 10px;
 	}
-	.portfolio-filter .stack-filter-button-group {
+	.portfolio-filter .stack-filter-row {
 		max-width: 100%;
+		width: 100%;
+		justify-content: center;
+		flex-wrap: nowrap;
+	}
+	.portfolio-filter .stack-filter-button-group {
+		max-width: calc(100% - 52px);
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
 		white-space: nowrap;
+		scrollbar-width: none;
+	}
+	.portfolio-filter .stack-filter-button-group::-webkit-scrollbar {
+		display: none;
 	}
 	.portfolio-filter .button-group button {
 		font-size: 14px;

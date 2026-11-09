@@ -280,10 +280,7 @@
     "repo": "vmedic",
     "branch": "main",
     "author": "asrofilnadib",
-    "prefixes": [
-      "vmedic",
-      "v-medic"
-    ],
+    "prefixes": [],
     "company": "others"
   },
   "bhasara": {
@@ -292,9 +289,7 @@
     "repo": "bhasara",
     "branch": "main",
     "author": "asrofilnadib",
-    "prefixes": [
-      "bhasara"
-    ],
+    "prefixes": [],
     "company": "others"
   },
   "stock-opname": {
@@ -303,12 +298,7 @@
     "repo": "so_arbi",
     "branch": "main",
     "author": "asrofilnadib",
-    "prefixes": [
-      "so-arbi",
-      "so_arbi",
-      "stock-opname",
-      "stock_opname"
-    ],
+    "prefixes": [],
     "company": "others"
   },
   "labqc": {

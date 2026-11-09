@@ -346,34 +346,133 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			applyPortfolioFilters();
 		});
 
-		// Stack filter (AND with company)
-		$(".stack-filter-button-group").on("click", "button", function () {
-			if ($(this).hasClass("stack-filter-toggle")) {
-				return;
+		function syncStackMenuActiveState() {
+			var current = stackFilter || "*";
+			$(".stack-filter-dropdown button[data-stack-filter]").each(function () {
+				$(this).toggleClass("active", $(this).attr("data-stack-filter") === current);
+			});
+		}
+
+		var $stackFilterMenu = $("#stack-filter-menu");
+		if ($stackFilterMenu.length && !$stackFilterMenu.parent().is("body")) {
+			$stackFilterMenu.appendTo("body");
+		}
+
+		var MENU_STACK_FILTERS = [".stack-ai", ".stack-webrtc", ".stack-firebase"];
+
+		function isMenuStackFilter(value) {
+			return MENU_STACK_FILTERS.indexOf(value) !== -1;
+		}
+
+		function positionStackFilterMenu($moreBtn) {
+			if (!$stackFilterMenu.length || !$moreBtn.length) return;
+			var rect = $moreBtn[0].getBoundingClientRect();
+			$stackFilterMenu.removeAttr("hidden").css({ visibility: "hidden", pointerEvents: "none" });
+			var menuWidth = $stackFilterMenu.outerWidth() || 184;
+			var menuHeight = $stackFilterMenu.outerHeight() || 160;
+			var gap = 8;
+			var left = rect.right - menuWidth;
+			var top = rect.bottom + gap;
+			if (left < 8) left = 8;
+			if (left + menuWidth > window.innerWidth - 8) {
+				left = Math.max(8, window.innerWidth - menuWidth - 8);
 			}
-			$(".stack-filter-button-group button[data-stack-filter]").removeClass("active");
-			$(this).addClass("active");
-			stackFilter = $(this).attr("data-stack-filter") || "*";
+			if (top + menuHeight > window.innerHeight - 8) {
+				top = rect.top - gap - menuHeight;
+			}
+			$stackFilterMenu.css({
+				top: top + "px",
+				left: left + "px",
+				right: "auto",
+				visibility: "",
+				pointerEvents: "",
+			});
+		}
+
+		function closeStackFilterMenu() {
+			var $more = $(".stack-filter-more");
+			$stackFilterMenu.removeClass("is-open").attr("hidden", "");
+			$more.removeClass("is-open").attr("aria-expanded", "false");
+			$(window).off("resize.stackFilterMenu scroll.stackFilterMenu");
+		}
+
+		function openStackFilterMenu($moreBtn) {
+			closeStackFilterMenu();
+			syncStackMenuActiveState();
+			positionStackFilterMenu($moreBtn);
+			$moreBtn.addClass("is-open").attr("aria-expanded", "true");
+			window.requestAnimationFrame(function () {
+				$stackFilterMenu.addClass("is-open");
+			});
+			var reposition = function () {
+				if ($stackFilterMenu.hasClass("is-open")) positionStackFilterMenu($moreBtn);
+			};
+			$(window).on("resize.stackFilterMenu scroll.stackFilterMenu", reposition);
+		}
+
+		function applyStackFilterFromBtn($btn) {
+			if (!$btn.length || !$btn.attr("data-stack-filter")) return;
+			var $group = $(".stack-filter-button-group");
+			var $more = $(".stack-filter-more");
+			var $pill = $group.find(".active-bg");
+			var fromMenu = $btn.closest(".stack-filter-dropdown").length > 0;
+			var value = $btn.attr("data-stack-filter") || "*";
+
+			$group.find("button[data-stack-filter]").removeClass("active");
+			$stackFilterMenu.find("button[data-stack-filter]").removeClass("active");
+			$btn.addClass("active");
+			stackFilter = value;
 			applyPortfolioFilters();
+			syncStackMenuActiveState();
+
+			if (fromMenu || isMenuStackFilter(value)) {
+				$more.addClass("stack-filter-more--filtered");
+				$pill.css({ opacity: 0, width: 0 });
+			} else {
+				$more.removeClass("stack-filter-more--filtered");
+				$pill.css({ opacity: "" });
+				activeFilterBtn($pill, $btn, $group);
+			}
+			closeStackFilterMenu();
+		}
+
+		// Stack filter (AND with company) — primary row only
+		$(".stack-filter-button-group").on("click", "button[data-stack-filter]", function () {
+			applyStackFilterFromBtn($(this));
 		});
 
-		$(".stack-filter-toggle").on("click", function () {
-			var $group = $(".stack-filter-button-group");
-			var $extra = $group.find(".stack-filter-extra");
-			var expanded = !$group.hasClass("is-expanded");
-			$group.toggleClass("is-expanded", expanded);
-			$(this).attr("aria-expanded", expanded ? "true" : "false");
-			if ($extra.length) {
-				if (expanded) {
-					$extra.removeAttr("hidden");
-				} else {
-					$extra.attr("hidden", "");
-				}
+		$(".stack-filter-more").on("click", function (e) {
+			e.stopPropagation();
+			var $btn = $(this);
+			if ($stackFilterMenu.hasClass("is-open")) {
+				closeStackFilterMenu();
+				return;
 			}
-			var $group = $(".stack-filter-button-group");
-			var $active = $group.find("button.active[data-stack-filter]").first();
-			activeFilterBtn($group.find(".active-bg"), $active, $group);
+			openStackFilterMenu($btn);
 		});
+
+		$stackFilterMenu.on("click", "button[data-stack-filter]", function (e) {
+			e.stopPropagation();
+			applyStackFilterFromBtn($(this));
+		});
+
+		$(document).on("click.stackFilterMenu", function (e) {
+			if (
+				!$(e.target).closest(".stack-filter-more, .stack-filter-more-capsule, .stack-filter-dropdown").length
+			) {
+				closeStackFilterMenu();
+			}
+		});
+
+		$(document).on("keydown.stackFilterMenu", function (e) {
+			if (e.key === "Escape") closeStackFilterMenu();
+		});
+
+		syncStackMenuActiveState();
+		if (isMenuStackFilter(stackFilter)) {
+			$(".stack-filter-more").addClass("stack-filter-more--filtered");
+			$(".stack-filter-button-group .active-bg").css({ opacity: 0, width: 0 });
+		}
 
 		/*------------------------------------------------------
   	/  Portfolio Gallery Carousel
@@ -640,8 +739,13 @@ Description: Gerold - Personal Portfolio HTML5 Template
 			$(".portfolio-filter .button-group").each(function () {
 				var $group = $(this);
 				var active_bg = $group.find(".active-bg");
-				var element = $group.find("button.active:not(.stack-filter-toggle)").first();
-				$group.find("button:not(.stack-filter-toggle)").on("click", function () {
+				var element = $group.find("button.active[data-stack-filter]").filter(function () {
+					return $(this).closest(".stack-filter-dropdown").length === 0;
+				}).first();
+				if (!element.length) {
+					element = $group.find("button.active:not(.stack-filter-more)").first();
+				}
+				$group.find("button:not(.stack-filter-more)").on("click", function () {
 					activeFilterBtn(active_bg, $(this), $group);
 				});
 				activeFilterBtn(active_bg, element, $group);
