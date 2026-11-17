@@ -1,6 +1,8 @@
 /* Watch Demo button + YouTube overlay (above Magnific portfolio modal) */
 
+/* Sementara disembunyikan sampai video demo siap — hapus display:none untuk tampilkan lagi */
 .btn-watch-demo {
+	display: none !important;
 	position: relative;
 }
 
