@@ -1,5 +1,9 @@
 /* PAS portfolio gallery: image / flowchart / youtube / ppt */
 
+.portfolio-box .portfolio-item.portfolio-item--hidden {
+	display: none !important;
+}
+
 .portfolio_gallery .gallery_item[data-type="flowchart"],
 .portfolio_gallery .gallery_item[data-type="youtube"],
 .portfolio_gallery .gallery_item[data-type="ppt"],

@@ -767,7 +767,9 @@ Description: Gerold - Personal Portfolio HTML5 Template
   	/  Funfact
   	/------------------------------------------------------*/
 		if ($(".odometer").length > 0) {
-			var projectCount = document.querySelectorAll(".portfolio-item").length;
+			var projectCount = document.querySelectorAll(
+				".portfolio-item:not(.portfolio-item--hidden)"
+			).length;
 			if (projectCount > 0) {
 				$('.odometer[data-stat="projects"]').attr("data-count", projectCount);
 			}
